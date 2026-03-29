@@ -8,6 +8,7 @@ import { UsersModule } from './users/users.module';
 import { StocksModule } from './stocks/stocks.module';
 import { PortfoliosModule } from './portfolios/portfolios.module';
 import { AlertsModule } from './alerts/alerts.module';
+import { ScrapeModule } from './scraper/scrape.module';
 
 @Module({
   imports: [
@@ -47,6 +48,7 @@ import { AlertsModule } from './alerts/alerts.module';
     StocksModule,
     PortfoliosModule,
     AlertsModule,
+    ScrapeModule,
   ],
 })
 export class AppModule {}
