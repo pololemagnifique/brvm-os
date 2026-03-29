@@ -19,29 +19,21 @@ let ScrapeController = class ScrapeController {
     constructor(scrapeService) {
         this.scrapeService = scrapeService;
     }
-    async triggerScrape() {
-        const result = await this.scrapeService.runScrape();
-        return {
-            ok: result.success,
-            ...result,
-            message: result.success
-                ? `Scrape réussi — ${result.stocksSaved} actions, ${result.indicesSaved} indices`
-                : `Scrape échoué: ${result.error}`,
-        };
-    }
     async getStatus() {
         const last = await this.scrapeService.getLastScrape();
-        if (!last)
-            return { ok: true, status: 'no_scrape_yet' };
         return {
             ok: true,
-            status: last.status,
-            tradingDate: last.tradingDate,
-            stocksCount: last.stocksCount,
-            indicesCount: last.indicesCount,
-            durationMs: last.durationMs,
-            error: last.error,
-            startedAt: last.startedAt,
+            scrape: last
+                ? {
+                    status: last.status,
+                    tradingDate: last.tradingDate,
+                    stocksCount: last.stocksCount,
+                    indicesCount: last.indicesCount,
+                    durationMs: last.durationMs,
+                    error: last.error,
+                    startedAt: last.startedAt,
+                }
+                : null,
         };
     }
     async getHistory() {
@@ -60,31 +52,66 @@ let ScrapeController = class ScrapeController {
             })),
         };
     }
+    async runScrape() {
+        const result = await this.scrapeService.runScrape();
+        return {
+            ok: result.success,
+            success: result.success,
+            tradingDate: result.tradingDate,
+            stocksSaved: result.stocksSaved,
+            indicesSaved: result.indicesSaved,
+            durationMs: result.durationMs,
+            message: result.success
+                ? `Scrape réussi — ${result.stocksSaved} actions, ${result.indicesSaved} indices`
+                : undefined,
+            error: result.success ? undefined : result.error,
+        };
+    }
+    async debugParse() {
+        const dbTickers = await this.scrapeService.getAllTickersInDb();
+        const { stocks } = await this.scrapeService.scrapeForDebug();
+        const parsedTickers = stocks.map((s) => s.ticker);
+        const missing = parsedTickers.filter((t) => !dbTickers.includes(t));
+        return { inDb: dbTickers, parsed: parsedTickers, missing };
+    }
 };
 exports.ScrapeController = ScrapeController;
 __decorate([
-    (0, common_1.Post)(),
-    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
-    (0, swagger_1.ApiBearerAuth)(),
-    (0, swagger_1.ApiOperation)({ summary: 'Déclencher un scrape BRVM immédiat' }),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", Promise)
-], ScrapeController.prototype, "triggerScrape", null);
-__decorate([
     (0, common_1.Get)('status'),
-    (0, swagger_1.ApiOperation)({ summary: 'Statut du dernier scrape' }),
+    (0, swagger_1.ApiBearerAuth)(),
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
+    (0, swagger_1.ApiOperation)({ summary: 'Dernier scrape' }),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], ScrapeController.prototype, "getStatus", null);
 __decorate([
     (0, common_1.Get)('history'),
+    (0, swagger_1.ApiBearerAuth)(),
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     (0, swagger_1.ApiOperation)({ summary: 'Historique des 10 derniers scrapes' }),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], ScrapeController.prototype, "getHistory", null);
+__decorate([
+    (0, common_1.Post)(),
+    (0, swagger_1.ApiBearerAuth)(),
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
+    (0, swagger_1.ApiOperation)({ summary: 'Déclencher un scrape BRVM' }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], ScrapeController.prototype, "runScrape", null);
+__decorate([
+    (0, common_1.Get)('debug-parse'),
+    (0, swagger_1.ApiBearerAuth)(),
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
+    (0, swagger_1.ApiOperation)({ summary: '[Debug] Comparer tickers parsés vs base' }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], ScrapeController.prototype, "debugParse", null);
 exports.ScrapeController = ScrapeController = __decorate([
     (0, swagger_1.ApiTags)('admin / scraping'),
     (0, common_1.Controller)('admin/scrape'),

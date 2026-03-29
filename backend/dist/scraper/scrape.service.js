@@ -259,6 +259,13 @@ let ScrapeService = ScrapeService_1 = class ScrapeService {
     async getScrapeHistory(limit = 10) {
         return this.logRepo.find({ where: {}, order: { startedAt: 'DESC' }, take: limit });
     }
+    async getAllTickersInDb() {
+        const stocks = await this.stockRepo.find({ select: ['ticker'] });
+        return stocks.map((s) => s.ticker);
+    }
+    async scrapeForDebug() {
+        return this.scrapeWithPlaywright();
+    }
 };
 exports.ScrapeService = ScrapeService;
 exports.ScrapeService = ScrapeService = ScrapeService_1 = __decorate([

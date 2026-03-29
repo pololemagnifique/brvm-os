@@ -301,4 +301,19 @@ export class ScrapeService implements OnModuleDestroy {
   async getScrapeHistory(limit = 10): Promise<ScrapeLog[]> {
     return this.logRepo.find({ where: {}, order: { startedAt: 'DESC' }, take: limit });
   }
+
+  // ─── Debug ─────────────────────────────────────────────────────────────
+
+  async getAllTickersInDb(): Promise<string[]> {
+    const stocks = await this.stockRepo.find({ select: ['ticker'] });
+    return stocks.map((s) => s.ticker);
+  }
+
+  async scrapeForDebug(): Promise<{
+    tradingDate: string;
+    indices: Record<string, { value: number; change: number }>;
+    stocks: StockData[];
+  }> {
+    return this.scrapeWithPlaywright();
+  }
 }

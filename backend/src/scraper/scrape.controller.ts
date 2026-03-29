@@ -1,5 +1,5 @@
 import { Controller, Get, Post, UseGuards } from '@nestjs/common';
-import { ApiTags, ApiBearerAuth, ApiOperation } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiTags, ApiOperation } from '@nestjs/swagger';
 import { ScrapeService } from './scrape.service';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 
@@ -8,39 +8,31 @@ import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 export class ScrapeController {
   constructor(private readonly scrapeService: ScrapeService) {}
 
-  @Post()
-  @UseGuards(JwtAuthGuard)
-  @ApiBearerAuth()
-  @ApiOperation({ summary: 'Déclencher un scrape BRVM immédiat' })
-  async triggerScrape() {
-    const result = await this.scrapeService.runScrape();
-    return {
-      ok: result.success,
-      ...result,
-      message: result.success
-        ? `Scrape réussi — ${result.stocksSaved} actions, ${result.indicesSaved} indices`
-        : `Scrape échoué: ${result.error}`,
-    };
-  }
-
   @Get('status')
-  @ApiOperation({ summary: 'Statut du dernier scrape' })
+  @ApiBearerAuth()
+  @UseGuards(JwtAuthGuard)
+  @ApiOperation({ summary: 'Dernier scrape' })
   async getStatus() {
     const last = await this.scrapeService.getLastScrape();
-    if (!last) return { ok: true, status: 'no_scrape_yet' };
     return {
       ok: true,
-      status: last.status,
-      tradingDate: last.tradingDate,
-      stocksCount: last.stocksCount,
-      indicesCount: last.indicesCount,
-      durationMs: last.durationMs,
-      error: last.error,
-      startedAt: last.startedAt,
+      scrape: last
+        ? {
+            status: last.status,
+            tradingDate: last.tradingDate,
+            stocksCount: last.stocksCount,
+            indicesCount: last.indicesCount,
+            durationMs: last.durationMs,
+            error: last.error,
+            startedAt: last.startedAt,
+          }
+        : null,
     };
   }
 
   @Get('history')
+  @ApiBearerAuth()
+  @UseGuards(JwtAuthGuard)
   @ApiOperation({ summary: 'Historique des 10 derniers scrapes' })
   async getHistory() {
     const history = await this.scrapeService.getScrapeHistory(10);
@@ -57,5 +49,37 @@ export class ScrapeController {
         startedAt: h.startedAt,
       })),
     };
+  }
+
+  @Post()
+  @ApiBearerAuth()
+  @UseGuards(JwtAuthGuard)
+  @ApiOperation({ summary: 'Déclencher un scrape BRVM' })
+  async runScrape() {
+    const result = await this.scrapeService.runScrape();
+    return {
+      ok: result.success,
+      success: result.success,
+      tradingDate: result.tradingDate,
+      stocksSaved: result.stocksSaved,
+      indicesSaved: result.indicesSaved,
+      durationMs: result.durationMs,
+      message: result.success
+        ? `Scrape réussi — ${result.stocksSaved} actions, ${result.indicesSaved} indices`
+        : undefined,
+      error: result.success ? undefined : result.error,
+    };
+  }
+
+  @Get('debug-parse')
+  @ApiBearerAuth()
+  @UseGuards(JwtAuthGuard)
+  @ApiOperation({ summary: '[Debug] Comparer tickers parsés vs base' })
+  async debugParse() {
+    const dbTickers = await this.scrapeService.getAllTickersInDb();
+    const { stocks } = await this.scrapeService.scrapeForDebug();
+    const parsedTickers = stocks.map((s) => s.ticker);
+    const missing = parsedTickers.filter((t) => !dbTickers.includes(t));
+    return { inDb: dbTickers, parsed: parsedTickers, missing };
   }
 }
