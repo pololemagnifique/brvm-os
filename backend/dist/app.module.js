@@ -17,6 +17,7 @@ const users_module_1 = require("./users/users.module");
 const stocks_module_1 = require("./stocks/stocks.module");
 const portfolios_module_1 = require("./portfolios/portfolios.module");
 const alerts_module_1 = require("./alerts/alerts.module");
+const scheduler_module_1 = require("./scheduler/scheduler.module");
 const scrape_module_1 = require("./scraper/scrape.module");
 let AppModule = class AppModule {
 };
@@ -56,6 +57,7 @@ exports.AppModule = AppModule = __decorate([
             portfolios_module_1.PortfoliosModule,
             alerts_module_1.AlertsModule,
             scrape_module_1.ScrapeModule,
+            scheduler_module_1.SchedulerModule,
         ],
     })
 ], AppModule);
