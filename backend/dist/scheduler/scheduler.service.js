@@ -47,34 +47,48 @@ exports.SchedulerService = void 0;
 const common_1 = require("@nestjs/common");
 const cron = __importStar(require("node-cron"));
 const scrape_service_1 = require("../scraper/scrape.service");
+const exchange_rates_service_1 = require("../exchange-rates/exchange-rates.service");
 let SchedulerService = SchedulerService_1 = class SchedulerService {
     scrapeService;
+    exchangeRatesService;
     logger = new common_1.Logger(SchedulerService_1.name);
-    constructor(scrapeService) {
+    constructor(scrapeService, exchangeRatesService) {
         this.scrapeService = scrapeService;
+        this.exchangeRatesService = exchangeRatesService;
     }
     onModuleInit() {
+        cron.schedule('0 0 18 * * *', async () => {
+            this.logger.log('⏰ [CRON] Taux de change...');
+            try {
+                const rate = await this.exchangeRatesService.saveRate();
+                this.logger.log(`✅ [CRON] Taux: 1 USD = ${rate.usdToXof} XOF | 1 EUR = ${rate.eurToXof} XOF [${rate.source}]`);
+            }
+            catch (err) {
+                this.logger.error(`❌ [CRON] Taux échoué: ${err.message}`);
+            }
+        });
         cron.schedule('0 30 18 * * *', async () => {
-            this.logger.log('⏰ [CRON] Lancement du scrape BRVM quotidien...');
+            this.logger.log('⏰ [CRON] Scrape BRVM...');
             try {
                 const result = await this.scrapeService.runScrape();
                 if (result.success) {
-                    this.logger.log(`✅ [CRON] Scrape réussi — ${result.stocksSaved} actions, ${result.indicesSaved} indices — ${result.durationMs}ms`);
+                    this.logger.log(`✅ [CRON] Scrape: ${result.stocksSaved} actions, ${result.indicesSaved} indices — ${result.durationMs}ms`);
                 }
                 else {
-                    this.logger.error(`❌ [CRON] Scrape échoué: ${result.error}`);
+                    this.logger.error(`❌ [CRON] Scrape: ${result.error}`);
                 }
             }
             catch (err) {
                 this.logger.error(`❌ [CRON] Exception: ${err.message}`);
             }
         });
-        this.logger.log('📅 Scheduler initialisé — scrape quotidien à 18h30');
+        this.logger.log('📅 Scheduler: taux @18h00 + scrape BRVM @18h30');
     }
 };
 exports.SchedulerService = SchedulerService;
 exports.SchedulerService = SchedulerService = SchedulerService_1 = __decorate([
     (0, common_1.Injectable)(),
-    __metadata("design:paramtypes", [scrape_service_1.ScrapeService])
+    __metadata("design:paramtypes", [scrape_service_1.ScrapeService,
+        exchange_rates_service_1.ExchangeRatesService])
 ], SchedulerService);
 //# sourceMappingURL=scheduler.service.js.map

@@ -9,6 +9,7 @@ import { StocksModule } from './stocks/stocks.module';
 import { PortfoliosModule } from './portfolios/portfolios.module';
 import { AlertsModule } from './alerts/alerts.module';
 import { SchedulerModule } from './scheduler/scheduler.module';
+import { ExchangeRatesModule } from './exchange-rates/exchange-rates.module';
 import { ScrapeModule } from './scraper/scrape.module';
 
 @Module({
@@ -51,6 +52,7 @@ import { ScrapeModule } from './scraper/scrape.module';
     AlertsModule,
     ScrapeModule,
     SchedulerModule,
+    ExchangeRatesModule,
   ],
 })
 export class AppModule {}

@@ -11,12 +11,13 @@ const common_1 = require("@nestjs/common");
 const schedule_1 = require("@nestjs/schedule");
 const scheduler_service_1 = require("./scheduler.service");
 const scrape_module_1 = require("../scraper/scrape.module");
+const exchange_rates_module_1 = require("../exchange-rates/exchange-rates.module");
 let SchedulerModule = class SchedulerModule {
 };
 exports.SchedulerModule = SchedulerModule;
 exports.SchedulerModule = SchedulerModule = __decorate([
     (0, common_1.Module)({
-        imports: [schedule_1.ScheduleModule.forRoot(), scrape_module_1.ScrapeModule],
+        imports: [schedule_1.ScheduleModule.forRoot(), scrape_module_1.ScrapeModule, exchange_rates_module_1.ExchangeRatesModule],
         providers: [scheduler_service_1.SchedulerService],
     })
 ], SchedulerModule);
