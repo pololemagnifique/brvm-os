@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import fs from "fs";
 import path from "path";
 import StockChart from "./StockChart";
+import StockTechnicals from "./StockTechnicals";
 
 const HISTORY_PATH =
   "/data/.openclaw/workspace/brvm-os/dashboard/data/history/all_prices.json";
@@ -457,6 +458,9 @@ export default async function StockDetailPage({
               </div>
             )}
           </div>
+
+          {/* Fiche Valeur — Technicals */}
+          <StockTechnicals ticker={data.ticker} />
         </div>
       </div>
 

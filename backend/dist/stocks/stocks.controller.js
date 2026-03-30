@@ -35,6 +35,9 @@ let StocksController = class StocksController {
     getHistory(ticker, days) {
         return this.stocksService.getHistory(ticker, days ? parseInt(days) : 30);
     }
+    getTechnicals(ticker) {
+        return this.stocksService.getTechnicals(ticker);
+    }
 };
 exports.StocksController = StocksController;
 __decorate([
@@ -72,6 +75,13 @@ __decorate([
     __metadata("design:paramtypes", [String, String]),
     __metadata("design:returntype", void 0)
 ], StocksController.prototype, "getHistory", null);
+__decorate([
+    (0, common_1.Get)(':ticker/technicals'),
+    __param(0, (0, common_1.Param)('ticker')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], StocksController.prototype, "getTechnicals", null);
 exports.StocksController = StocksController = __decorate([
     (0, common_1.Controller)('stocks'),
     __metadata("design:paramtypes", [stocks_service_1.StocksService])

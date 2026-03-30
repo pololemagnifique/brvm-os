@@ -12,4 +12,47 @@ export declare class StocksService {
     getLatestPrices(ticker?: string): Promise<EodPrice[]>;
     getHistory(ticker: string, days?: number): Promise<EodPrice[]>;
     getIndices(): Promise<Indice[]>;
+    getTechnicals(ticker: string): Promise<{
+        ticker: string;
+        error: string;
+        date?: undefined;
+        cours?: undefined;
+        variationJour?: undefined;
+        rsi14?: undefined;
+        mm10?: undefined;
+        mm20?: undefined;
+        mm50?: undefined;
+        support30?: undefined;
+        resistance30?: undefined;
+        support252?: undefined;
+        resistance252?: undefined;
+        var7j?: undefined;
+        var30j?: undefined;
+        signal?: undefined;
+        vsMm10?: undefined;
+        vsMm20?: undefined;
+        vsMm50?: undefined;
+        nbJours?: undefined;
+    } | {
+        ticker: string;
+        date: string;
+        cours: number;
+        variationJour: number;
+        rsi14: number;
+        mm10: number | null;
+        mm20: number | null;
+        mm50: number | null;
+        support30: number;
+        resistance30: number;
+        support252: number;
+        resistance252: number;
+        var7j: number | null;
+        var30j: number | null;
+        signal: "ACHAT" | "VENTE" | "NEUTRE" | "SURVente" | "SURACHAT";
+        vsMm10: number | null;
+        vsMm20: number | null;
+        vsMm50: number | null;
+        nbJours: number;
+        error?: undefined;
+    }>;
 }

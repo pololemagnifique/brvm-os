@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import Link from "next/link";
 
 interface Stock {
   ticker: string;
@@ -17,7 +16,7 @@ interface Stock {
 type SortKey = keyof Stock;
 type SortDir = "asc" | "desc";
 
-const COLS: { key: SortKey; label: string }[] = [
+const COLS: { key: SortKey | "fiche"; label: string }[] = [
   { key: "ticker", label: "Symbole" },
   { key: "companyName", label: "Entreprise" },
   { key: "sector", label: "Secteur" },
@@ -25,6 +24,7 @@ const COLS: { key: SortKey; label: string }[] = [
   { key: "var_7d", label: "Var 7j" },
   { key: "var_30d", label: "Var 30j" },
   { key: "volume", label: "Volume" },
+  { key: "fiche", label: "Fiche" },
 ];
 
 export default function StocksTable({ stocks }: { stocks: Stock[] }) {
@@ -58,7 +58,7 @@ export default function StocksTable({ stocks }: { stocks: Stock[] }) {
             {COLS.map(({ key, label }) => (
               <th
                 key={key}
-                onClick={() => handleSort(key)}
+                onClick={() => key !== "fiche" && handleSort(key as SortKey)}
                 style={{
                   padding: "12px 14px",
                   textAlign: key === "last" || key === "var_7d" || key === "var_30d" || key === "volume" ? "right" : "left",
@@ -67,7 +67,7 @@ export default function StocksTable({ stocks }: { stocks: Stock[] }) {
                   fontSize: "0.7rem",
                   textTransform: "uppercase",
                   letterSpacing: "0.05em",
-                  cursor: "pointer",
+                  cursor: key === "fiche" ? "default" : "pointer",
                   userSelect: "none",
                   whiteSpace: "nowrap",
                 }}
@@ -85,8 +85,7 @@ export default function StocksTable({ stocks }: { stocks: Stock[] }) {
             return (
               <tr
                 key={s.ticker}
-                style={{ borderBottom: "1px solid #1a2a22", cursor: "pointer", transition: "background 0.15s" }}
-                onClick={() => (window.location.href = `/stock/${s.ticker}`)}
+                style={{ borderBottom: "1px solid #1a2a22", transition: "background 0.15s" }}
                 onMouseOver={(e) => ((e.currentTarget as HTMLElement).style.background = "#1a2a22")}
                 onMouseOut={(e) => ((e.currentTarget as HTMLElement).style.background = "transparent")}
               >
@@ -106,6 +105,24 @@ export default function StocksTable({ stocks }: { stocks: Stock[] }) {
                 </td>
                 <td style={{ padding: "10px 12px", fontFamily: "monospace", color: "#9ca3af", fontSize: "0.8rem", textAlign: "right" }}>
                   {s.volume != null ? s.volume.toLocaleString("fr-FR") : "—"}
+                </td>
+                <td style={{ padding: "8px 10px", textAlign: "right" }}>
+                  <button
+                    onClick={() => (window.location.href = `/stocks/${s.ticker}`)}
+                    style={{
+                      padding: "4px 12px",
+                      background: "rgba(245,158,11,0.1)",
+                      border: "1px solid rgba(245,158,11,0.35)",
+                      borderRadius: 6,
+                      color: "#f59e0b",
+                      fontSize: "0.75rem",
+                      fontWeight: 600,
+                      cursor: "pointer",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    Fiche Valeur
+                  </button>
                 </td>
               </tr>
             );

@@ -30,4 +30,9 @@ export class StocksController {
   getHistory(@Param('ticker') ticker: string, @Query('days') days?: string) {
     return this.stocksService.getHistory(ticker, days ? parseInt(days) : 30);
   }
+
+  @Get(':ticker/technicals')
+  getTechnicals(@Param('ticker') ticker: string) {
+    return this.stocksService.getTechnicals(ticker);
+  }
 }
