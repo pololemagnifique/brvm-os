@@ -5,9 +5,10 @@ import { Portfolio } from './portfolio.entity';
 import { Transaction, TransactionType } from './transaction.entity';
 import { Watchlist } from './watchlist.entity';
 import { WatchlistItem } from './watchlist-item.entity';
+import { Stock } from '../stocks/stock.entity';
 import { CreateTransactionDto } from './dto/create-transaction.dto';
 import { CreatePortfolioDto } from './dto/create-portfolio.dto';
-import { AddWatchlistItemDto } from './dto/add-watchlist-item.dto';
+import { AddWatchlistItemDto, CreateWatchlistDto, UpdateWatchlistDto } from './dto/add-watchlist-item.dto';
 
 @Injectable()
 export class PortfoliosService {
@@ -16,6 +17,7 @@ export class PortfoliosService {
     @InjectRepository(Transaction) private txRepo: Repository<Transaction>,
     @InjectRepository(Watchlist) private watchlistRepo: Repository<Watchlist>,
     @InjectRepository(WatchlistItem) private watchlistItemRepo: Repository<WatchlistItem>,
+    @InjectRepository(Stock) private stockRepo: Repository<Stock>,
   ) {}
 
   // PORTFOLIOS
@@ -97,24 +99,65 @@ export class PortfoliosService {
     });
   }
 
-  async createWatchlist(userId: string, name: string) {
-    const wl = this.watchlistRepo.create({ name, userId });
+  async getWatchlist(watchlistId: string, userId: string) {
+    const wl = await this.watchlistRepo.findOne({
+      where: { id: watchlistId },
+      relations: ['items', 'items.stock'],
+    });
+    if (!wl) throw new NotFoundException('Watchlist non trouvée');
+    if (wl.userId !== userId) throw new ForbiddenException('Watchlist non accessible');
+    return wl;
+  }
+
+  async createWatchlist(userId: string, dto: CreateWatchlistDto) {
+    const wl = this.watchlistRepo.create({ name: dto.name, userId });
+    const saved = await this.watchlistRepo.save(wl);
+
+    if (dto.tickers && dto.tickers.length > 0) {
+      for (const ticker of dto.tickers) {
+        const stock = await this.stockRepo.findOne({ where: { ticker } });
+        if (stock) {
+          const item = this.watchlistItemRepo.create({ watchlistId: saved.id, stockId: stock.id });
+          await this.watchlistItemRepo.save(item);
+        }
+      }
+    }
+
+    return this.getWatchlist(saved.id, userId);
+  }
+
+  async updateWatchlist(watchlistId: string, userId: string, dto: UpdateWatchlistDto) {
+    const wl = await this.getWatchlist(watchlistId, userId);
+    wl.name = dto.name;
     return this.watchlistRepo.save(wl);
   }
 
-  async addToWatchlist(watchlistId: string, userId: string, dto: AddWatchlistItemDto) {
-    const wl = await this.watchlistRepo.findOne({ where: { id: watchlistId } });
-    if (!wl || wl.userId !== userId) throw new ForbiddenException('Watchlist non accessible');
+  async deleteWatchlist(watchlistId: string, userId: string) {
+    const wl = await this.getWatchlist(watchlistId, userId);
+    await this.watchlistRepo.remove(wl);
+    return { deleted: true };
+  }
 
-    const item = this.watchlistItemRepo.create({ watchlistId, stockId: dto.stockId });
+  async addToWatchlist(watchlistId: string, userId: string, dto: AddWatchlistItemDto) {
+    const wl = await this.getWatchlist(watchlistId, userId);
+
+    const stock = await this.stockRepo.findOne({ where: { ticker: dto.ticker } });
+    if (!stock) throw new NotFoundException(`Ticker "${dto.ticker}" non trouvé`);
+
+    // Check if already exists
+    const existing = await this.watchlistItemRepo.findOne({ where: { watchlistId, stockId: stock.id } });
+    if (existing) return existing;
+
+    const item = this.watchlistItemRepo.create({ watchlistId, stockId: stock.id });
     return this.watchlistItemRepo.save(item);
   }
 
-  async removeFromWatchlist(watchlistId: string, userId: string, stockId: string) {
-    const wl = await this.watchlistRepo.findOne({ where: { id: watchlistId } });
-    if (!wl || wl.userId !== userId) throw new ForbiddenException();
+  async removeFromWatchlist(watchlistId: string, userId: string, ticker: string) {
+    const wl = await this.getWatchlist(watchlistId, userId);
+    const stock = await this.stockRepo.findOne({ where: { ticker } });
+    if (!stock) throw new NotFoundException(`Ticker "${ticker}" non trouvé`);
 
-    await this.watchlistItemRepo.delete({ watchlistId, stockId });
+    await this.watchlistItemRepo.delete({ watchlistId, stockId: stock.id });
     return { deleted: true };
   }
 }

@@ -27,7 +27,6 @@ export class StocksController {
   }
 
   @Get(':ticker/history')
-  @UseGuards(JwtAuthGuard)
   getHistory(@Param('ticker') ticker: string, @Query('days') days?: string) {
     return this.stocksService.getHistory(ticker, days ? parseInt(days) : 30);
   }

@@ -13,6 +13,7 @@ const portfolio_entity_1 = require("./portfolio.entity");
 const transaction_entity_1 = require("./transaction.entity");
 const watchlist_entity_1 = require("./watchlist.entity");
 const watchlist_item_entity_1 = require("./watchlist-item.entity");
+const stock_entity_1 = require("../stocks/stock.entity");
 const portfolios_service_1 = require("./portfolios.service");
 const portfolios_controller_1 = require("./portfolios.controller");
 let PortfoliosModule = class PortfoliosModule {
@@ -20,7 +21,7 @@ let PortfoliosModule = class PortfoliosModule {
 exports.PortfoliosModule = PortfoliosModule;
 exports.PortfoliosModule = PortfoliosModule = __decorate([
     (0, common_1.Module)({
-        imports: [typeorm_1.TypeOrmModule.forFeature([portfolio_entity_1.Portfolio, transaction_entity_1.Transaction, watchlist_entity_1.Watchlist, watchlist_item_entity_1.WatchlistItem])],
+        imports: [typeorm_1.TypeOrmModule.forFeature([portfolio_entity_1.Portfolio, transaction_entity_1.Transaction, watchlist_entity_1.Watchlist, watchlist_item_entity_1.WatchlistItem, stock_entity_1.Stock])],
         controllers: [portfolios_controller_1.PortfoliosController],
         providers: [portfolios_service_1.PortfoliosService],
         exports: [portfolios_service_1.PortfoliosService],

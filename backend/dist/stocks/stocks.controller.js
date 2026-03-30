@@ -15,7 +15,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.StocksController = void 0;
 const common_1 = require("@nestjs/common");
 const stocks_service_1 = require("./stocks.service");
-const jwt_auth_guard_1 = require("../auth/guards/jwt-auth.guard");
 let StocksController = class StocksController {
     stocksService;
     constructor(stocksService) {
@@ -67,7 +66,6 @@ __decorate([
 ], StocksController.prototype, "findOne", null);
 __decorate([
     (0, common_1.Get)(':ticker/history'),
-    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     __param(0, (0, common_1.Param)('ticker')),
     __param(1, (0, common_1.Query)('days')),
     __metadata("design:type", Function),

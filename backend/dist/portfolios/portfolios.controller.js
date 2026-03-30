@@ -42,14 +42,23 @@ let PortfoliosController = class PortfoliosController {
     getWatchlists(req) {
         return this.portfoliosService.getWatchlists(req.user.id);
     }
-    createWatchlist(req, body) {
-        return this.portfoliosService.createWatchlist(req.user.id, body.name);
+    createWatchlist(req, dto) {
+        return this.portfoliosService.createWatchlist(req.user.id, dto);
+    }
+    getWatchlist(id, req) {
+        return this.portfoliosService.getWatchlist(id, req.user.id);
+    }
+    updateWatchlist(id, req, dto) {
+        return this.portfoliosService.updateWatchlist(id, req.user.id, dto);
+    }
+    deleteWatchlist(id, req) {
+        return this.portfoliosService.deleteWatchlist(id, req.user.id);
     }
     addToWatchlist(id, req, dto) {
         return this.portfoliosService.addToWatchlist(id, req.user.id, dto);
     }
-    removeFromWatchlist(watchlistId, stockId, req) {
-        return this.portfoliosService.removeFromWatchlist(watchlistId, req.user.id, stockId);
+    removeFromWatchlist(id, ticker, req) {
+        return this.portfoliosService.removeFromWatchlist(id, req.user.id, ticker);
     }
 };
 exports.PortfoliosController = PortfoliosController;
@@ -105,22 +114,47 @@ __decorate([
     __param(0, (0, common_1.Request)()),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:paramtypes", [Object, add_watchlist_item_dto_1.CreateWatchlistDto]),
     __metadata("design:returntype", void 0)
 ], PortfoliosController.prototype, "createWatchlist", null);
 __decorate([
-    (0, common_1.Post)('watchlists/:watchlistId/items'),
-    __param(0, (0, common_1.Param)('watchlistId')),
+    (0, common_1.Get)('watchlists/:id'),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Request)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", void 0)
+], PortfoliosController.prototype, "getWatchlist", null);
+__decorate([
+    (0, common_1.Put)('watchlists/:id'),
+    __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Request)()),
     __param(2, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, Object, add_watchlist_item_dto_1.AddWatchlistItemDto]),
+    __metadata("design:paramtypes", [String, Object, add_watchlist_item_dto_1.UpdateWatchlistDto]),
+    __metadata("design:returntype", void 0)
+], PortfoliosController.prototype, "updateWatchlist", null);
+__decorate([
+    (0, common_1.Delete)('watchlists/:id'),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Request)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", void 0)
+], PortfoliosController.prototype, "deleteWatchlist", null);
+__decorate([
+    (0, common_1.Post)('watchlists/:id/items'),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Request)()),
+    __param(2, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object, Object]),
     __metadata("design:returntype", void 0)
 ], PortfoliosController.prototype, "addToWatchlist", null);
 __decorate([
-    (0, common_1.Delete)('watchlists/:watchlistId/items/:stockId'),
-    __param(0, (0, common_1.Param)('watchlistId')),
-    __param(1, (0, common_1.Param)('stockId')),
+    (0, common_1.Delete)('watchlists/:id/items/:ticker'),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Param)('ticker')),
     __param(2, (0, common_1.Request)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, String, Object]),

@@ -1,6 +1,20 @@
-import { IsUUID } from 'class-validator';
+import { IsString, IsOptional, IsUUID } from 'class-validator';
 
 export class AddWatchlistItemDto {
-  @IsUUID()
-  stockId: string;
+  @IsString()
+  ticker: string;
+}
+
+export class CreateWatchlistDto {
+  @IsString()
+  name: string;
+
+  @IsOptional()
+  @IsString({ each: true })
+  tickers?: string[];
+}
+
+export class UpdateWatchlistDto {
+  @IsString()
+  name: string;
 }

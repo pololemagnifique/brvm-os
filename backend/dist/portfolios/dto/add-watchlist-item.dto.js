@@ -9,14 +9,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AddWatchlistItemDto = void 0;
+exports.UpdateWatchlistDto = exports.CreateWatchlistDto = exports.AddWatchlistItemDto = void 0;
 const class_validator_1 = require("class-validator");
 class AddWatchlistItemDto {
-    stockId;
+    ticker;
 }
 exports.AddWatchlistItemDto = AddWatchlistItemDto;
 __decorate([
-    (0, class_validator_1.IsUUID)(),
+    (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
-], AddWatchlistItemDto.prototype, "stockId", void 0);
+], AddWatchlistItemDto.prototype, "ticker", void 0);
+class CreateWatchlistDto {
+    name;
+    tickers;
+}
+exports.CreateWatchlistDto = CreateWatchlistDto;
+__decorate([
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], CreateWatchlistDto.prototype, "name", void 0);
+__decorate([
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsString)({ each: true }),
+    __metadata("design:type", Array)
+], CreateWatchlistDto.prototype, "tickers", void 0);
+class UpdateWatchlistDto {
+    name;
+}
+exports.UpdateWatchlistDto = UpdateWatchlistDto;
+__decorate([
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], UpdateWatchlistDto.prototype, "name", void 0);
 //# sourceMappingURL=add-watchlist-item.dto.js.map

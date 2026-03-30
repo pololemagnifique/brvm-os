@@ -4,11 +4,12 @@ import { Portfolio } from './portfolio.entity';
 import { Transaction } from './transaction.entity';
 import { Watchlist } from './watchlist.entity';
 import { WatchlistItem } from './watchlist-item.entity';
+import { Stock } from '../stocks/stock.entity';
 import { PortfoliosService } from './portfolios.service';
 import { PortfoliosController } from './portfolios.controller';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Portfolio, Transaction, Watchlist, WatchlistItem])],
+  imports: [TypeOrmModule.forFeature([Portfolio, Transaction, Watchlist, WatchlistItem, Stock])],
   controllers: [PortfoliosController],
   providers: [PortfoliosService],
   exports: [PortfoliosService],

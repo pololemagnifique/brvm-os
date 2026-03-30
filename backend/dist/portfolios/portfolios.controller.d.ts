@@ -1,7 +1,7 @@
 import { PortfoliosService } from './portfolios.service';
 import { CreatePortfolioDto } from './dto/create-portfolio.dto';
 import { CreateTransactionDto } from './dto/create-transaction.dto';
-import { AddWatchlistItemDto } from './dto/add-watchlist-item.dto';
+import { CreateWatchlistDto, UpdateWatchlistDto } from './dto/add-watchlist-item.dto';
 export declare class PortfoliosController {
     private portfoliosService;
     constructor(portfoliosService: PortfoliosService);
@@ -11,11 +11,14 @@ export declare class PortfoliosController {
     addTransaction(id: string, req: any, dto: CreateTransactionDto): Promise<import("./transaction.entity").Transaction>;
     getPositions(id: string, req: any): Promise<any[]>;
     getWatchlists(req: any): Promise<import("./watchlist.entity").Watchlist[]>;
-    createWatchlist(req: any, body: {
-        name: string;
-    }): Promise<import("./watchlist.entity").Watchlist>;
-    addToWatchlist(id: string, req: any, dto: AddWatchlistItemDto): Promise<import("./watchlist-item.entity").WatchlistItem>;
-    removeFromWatchlist(watchlistId: string, stockId: string, req: any): Promise<{
+    createWatchlist(req: any, dto: CreateWatchlistDto): Promise<import("./watchlist.entity").Watchlist>;
+    getWatchlist(id: string, req: any): Promise<import("./watchlist.entity").Watchlist>;
+    updateWatchlist(id: string, req: any, dto: UpdateWatchlistDto): Promise<import("./watchlist.entity").Watchlist>;
+    deleteWatchlist(id: string, req: any): Promise<{
+        deleted: boolean;
+    }>;
+    addToWatchlist(id: string, req: any, dto: any): Promise<import("./watchlist-item.entity").WatchlistItem>;
+    removeFromWatchlist(id: string, ticker: string, req: any): Promise<{
         deleted: boolean;
     }>;
 }
