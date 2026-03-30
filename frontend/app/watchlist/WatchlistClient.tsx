@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 
-const API = "http://localhost:3000/api";
+const API = "/api";
 const EOD_PATH = "/data/.openclaw/workspace/brvm-os/dashboard/data/eod_data.json";
 
 interface Stock {
@@ -17,6 +17,7 @@ interface Stock {
 interface WatchlistItem {
   id: string;
   ticker: string;
+  stock?: { ticker: string; companyName?: string; sector?: string };
   companyName?: string;
   sector?: string;
   last: number | null;
@@ -39,10 +40,9 @@ interface Watchlist {
 // Load EOD prices for tickers
 async function loadPrices(tickers: string[]): Promise<Record<string, Stock>> {
   try {
-    const fs = await import("fs");
-    const raw = fs.readFileSync(EOD_PATH, "utf-8");
-    const data = JSON.parse(raw);
-    const list = Array.isArray(data) ? data : (data.stocks || []);
+    const res = await fetch('/api/prices');
+    if (!res.ok) return {};
+    const list = await res.json();
     const map: Record<string, Stock> = {};
     for (const s of list) {
       if (s && s.ticker && tickers.includes(s.ticker)) {
@@ -117,15 +117,17 @@ export default function WatchlistClient() {
     }
     if (!res.ok) throw new Error("Erreur chargement watchlists");
     const data: Watchlist[] = await res.json();
-    // Enrich items with EOD prices
-    const tickers = data.flatMap((wl) => wl.items.map((i) => i.ticker));
+    // Enrich items with EOD prices — stock ticker is nested in item.stock
+    const tickers = data.flatMap((wl) => wl.items.map((i) => i.stock?.ticker || ""));
     const prices = await loadPrices(tickers);
     const enriched = data.map((wl) => ({
       ...wl,
       items: wl.items.map((item) => {
-        const p = prices[item.ticker] || {};
+        const ticker = item.stock?.ticker || "";
+        const p = prices[ticker] || {};
         return {
           ...item,
+          ticker,
           companyName: (item as any).stock?.companyName || (item as any).stock?.company_name || "",
           sector: (item as any).stock?.sector || "",
           last: p.last ?? null,

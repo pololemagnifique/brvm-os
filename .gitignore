@@ -1,0 +1,5 @@
+coverage/
+-e coverage/
+dist/
+.next/
+node_modules/

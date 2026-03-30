@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 };
 
 const NAV_LINKS = [
+  { href: "/", label: "Dashboard" },
   { href: "/stocks", label: "Cours" },
   { href: "/watchlist", label: "Watchlist" },
   { href: "/portefeuille", label: "Portefeuille" },
@@ -34,7 +35,7 @@ export default function RootLayout({
           >
             {/* Logo */}
             <Link
-              href="/stocks"
+              href="/"
               style={{ color: "var(--green)", fontWeight: 700, fontSize: "1.2rem", letterSpacing: "-0.02em" }}
             >
               BRVM-OS
@@ -62,6 +63,13 @@ export default function RootLayout({
 
         {/* Page content */}
         <main className="max-w-7xl mx-auto px-4 py-6">{children}</main>
+
+        {/* Legal Disclaimer */}
+        <footer style={{ background: "#0a0f0a", borderTop: "1px solid #1f2d1f", padding: "12px 24px", textAlign: "center" }}>
+          <p style={{ color: "#4b5563", fontSize: "0.75rem", maxWidth: 800, margin: "0 auto", lineHeight: 1.6 }}>
+            ⚠️ Les informations publiées sur BRVM-OS sont fournies à <strong>titre informatif et pédagogique uniquement</strong>. Elles ne constituent ni une recommandation personnalisée ni un conseil en investissement. Les données financières sont présentées à des fins éducatives et ne sauraient fonder une décision d'investissement. Avant d'investir, consultez un conseiller financier agréé. BRVM-OS n'est pas affilié à la BRVM ni soumis à son contrôle réglementaire.
+          </p>
+        </footer>
 
         <style>{`
           .nav-link:hover { color: #ffffff !important; }
