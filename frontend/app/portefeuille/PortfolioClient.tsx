@@ -60,7 +60,8 @@ async function loadPrices(tickers: string[]): Promise<Record<string, Stock>> {
   try {
     const res = await fetch("/api/prices");
     if (!res.ok) return {};
-    const list: Stock[] = await res.json();
+    const data = await res.json();
+    const list: Stock[] = Array.isArray(data) ? data : (data.stocks || []);
     const map: Record<string, Stock> = {};
     for (const s of list) {
       if (s && s.ticker && tickers.includes(s.ticker)) map[s.ticker] = s;

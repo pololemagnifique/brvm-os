@@ -10,8 +10,8 @@ export async function GET() {
   try {
     const raw = readFileSync(EOD_PATH, 'utf-8');
     const data = JSON.parse(raw);
-    const stocks = Array.isArray(data) ? data : (data.stocks || data.data || []);
-    return NextResponse.json(stocks, {
+    // Return the full object: { indices, stocks, ... } for the dashboard
+    return NextResponse.json(data, {
       headers: { 'Cache-Control': 'public, max-age=300' },
     });
   } catch {

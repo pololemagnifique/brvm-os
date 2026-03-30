@@ -67,7 +67,7 @@ export default function RootLayout({
         {/* Legal Disclaimer */}
         <footer style={{ background: "#0a0f0a", borderTop: "1px solid #1f2d1f", padding: "12px 24px", textAlign: "center" }}>
           <p style={{ color: "#4b5563", fontSize: "0.75rem", maxWidth: 800, margin: "0 auto", lineHeight: 1.6 }}>
-            ⚠️ Les informations publiées sur BRVM-OS sont fournies à <strong>titre informatif et pédagogique uniquement</strong>. Elles ne constituent ni une recommandation personnalisée ni un conseil en investissement. Les données financières sont présentées à des fins éducatives et ne sauraient fonder une décision d'investissement. Avant d'investir, consultez un conseiller financier agréé. BRVM-OS n'est pas affilié à la BRVM ni soumis à son contrôle réglementaire.
+            ⚠️ Les données affichées sont fournies à titre informatif et éducatif uniquement. Elles ne constituent ni une recommandation personnalisée ni un conseil en investissement. Les performances passées ne préjugent pas des résultats futurs. Source : BRVM (brvm.org)
           </p>
         </footer>
 

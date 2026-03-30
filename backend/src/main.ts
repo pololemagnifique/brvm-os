@@ -16,7 +16,7 @@ async function bootstrap() {
 
   // Disclaimer header on all responses
   app.use((req: any, res: any, next: any) => {
-    res.setHeader('X-Disclaimer', 'Les informations sont fournies à titre informatif et pédagogique uniquement. Elles ne constituent ni une recommandation personnalisée ni un conseil en investissement.');
+    res.setHeader('X-Disclaimer', 'Les données sont fournies à titre informatif uniquement. Pas un conseil en investissement. Source : brvm.org');
     next();
   });
 

@@ -13,7 +13,7 @@ async function bootstrap() {
     const frontendUrl = configService.get('FRONTEND_URL', 'http://localhost:3001');
     app.setGlobalPrefix(apiPrefix);
     app.use((req, res, next) => {
-        res.setHeader('X-Disclaimer', 'Les informations sont fournies à titre informatif et pédagogique uniquement. Elles ne constituent ni une recommandation personnalisée ni un conseil en investissement.');
+        res.setHeader('X-Disclaimer', 'Les données sont fournies à titre informatif uniquement. Pas un conseil en investissement. Source : brvm.org');
         next();
     });
     app.useGlobalPipes(new common_1.ValidationPipe({

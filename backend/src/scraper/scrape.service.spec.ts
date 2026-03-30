@@ -1,5 +1,11 @@
-jest.mock('typeorm');
-// Mock playwright BEFORE any imports
+/**
+ * ScrapeService Unit Tests
+ * 
+ * Since @nestjs/typeorm triggers a Node.js 22 / path-scurry compatibility
+ * issue at module load time, we test the service by extracting pure functions
+ * and instantiating the service with plain mock objects (no TypeORM involved).
+ */
+
 const mockPage = {
   setExtraHTTPHeaders: jest.fn().mockResolvedValue(undefined),
   goto: jest.fn().mockResolvedValue(undefined),
@@ -16,6 +22,7 @@ const mockBrowser = {
   close: jest.fn().mockResolvedValue(undefined),
 };
 
+// Mock playwright BEFORE the service module is loaded
 jest.mock('playwright', () => ({
   chromium: {
     launch: jest.fn().mockResolvedValue(mockBrowser),
@@ -24,8 +31,10 @@ jest.mock('playwright', () => ({
 
 jest.mock('fs', () => ({}));
 
+
+
+// ─── Import ScrapeService AFTER all mocks are set up ────────────────────────
 import { ScrapeService } from './scrape.service';
-import { ScrapeStatus } from './scrape-log.entity';
 
 const mockRepo = () => ({
   find: jest.fn(),
@@ -46,6 +55,7 @@ describe('ScrapeService', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
+
     mockPage['$$eval'].mockClear();
     mockPage.evaluate.mockClear();
     mockBrowser.newPage.mockClear();
@@ -59,6 +69,7 @@ describe('ScrapeService', () => {
     stockRepo = mockRepo();
     logRepo = mockRepo();
 
+    // Instantiate without TypeORM — only the pure methods will work
     service = new ScrapeService(
       eodRepo as any,
       indiceRepo as any,
@@ -67,13 +78,11 @@ describe('ScrapeService', () => {
     );
   });
 
-  afterEach(() => {
-    jest.clearAllMocks();
-  });
+  // ─── runScrape ─────────────────────────────────────────────────────────────
 
   describe('runScrape', () => {
     it('doit retourner un succès avec les données du scrape', async () => {
-      logRepo.create.mockReturnValue({ status: ScrapeStatus.RUNNING });
+      logRepo.create.mockReturnValue({ id: 'log-1' });
       logRepo.save.mockResolvedValue({ id: 'log-1' });
       stockRepo.find.mockResolvedValue([{ id: 's1', ticker: 'BRVM-SA' }]);
       eodRepo.delete.mockResolvedValue({ affected: 0 });
@@ -88,7 +97,7 @@ describe('ScrapeService', () => {
     });
 
     it('doit retourner une erreur si un scrape est déjà en cours', async () => {
-      logRepo.create.mockReturnValue({ status: ScrapeStatus.RUNNING });
+      logRepo.create.mockReturnValue({ id: 'log-1' });
       logRepo.save.mockResolvedValue({ id: 'log-1' });
       stockRepo.find.mockResolvedValue([{ id: 's1', ticker: 'BRVM-SA' }]);
       eodRepo.delete.mockResolvedValue({ affected: 0 });
@@ -96,21 +105,21 @@ describe('ScrapeService', () => {
       indiceRepo.delete.mockResolvedValue({ affected: 0 });
       indiceRepo.insert.mockResolvedValue({ identifiers: [] });
 
-      // First call succeeds
-      await service.runScrape();
+      await service.runScrape(); // first call succeeds
 
-      // Second call should be blocked
-      const result = await service.runScrape();
+      const result = await service.runScrape(); // second call blocked
       expect(result.success).toBe(false);
       expect(result.error).toContain('already in progress');
     });
   });
 
+  // ─── Query methods ─────────────────────────────────────────────────────────
+
   describe('getLastScrape', () => {
     it('doit retourner le dernier scrape', async () => {
-      logRepo.findOne.mockResolvedValue({ id: 'log-1', status: ScrapeStatus.SUCCESS });
+      logRepo.findOne.mockResolvedValue({ id: 'log-1' });
       const result = await service.getLastScrape();
-      expect(result).toEqual({ id: 'log-1', status: ScrapeStatus.SUCCESS });
+      expect(result).toEqual({ id: 'log-1' });
     });
 
     it('doit retourner null si aucun scrape', async () => {
@@ -122,16 +131,13 @@ describe('ScrapeService', () => {
 
   describe('getScrapeHistory', () => {
     it('doit retourner l historique des scrapes', async () => {
-      logRepo.find.mockResolvedValue([
-        { id: 'log-1', status: ScrapeStatus.SUCCESS },
-        { id: 'log-2', status: ScrapeStatus.FAILED },
-      ]);
+      logRepo.find.mockResolvedValue([{ id: 'l1' }, { id: 'l2' }]);
       const result = await service.getScrapeHistory(10);
       expect(result.length).toBe(2);
       expect(logRepo.find).toHaveBeenCalledWith({ where: {}, order: { startedAt: 'DESC' }, take: 10 });
     });
 
-    it('doit utiliser la limite par défaut de 10', async () => {
+    it('doit utiliser la limite par defaut de 10', async () => {
       logRepo.find.mockResolvedValue([]);
       await service.getScrapeHistory();
       expect(logRepo.find).toHaveBeenCalledWith({ where: {}, order: { startedAt: 'DESC' }, take: 10 });
@@ -152,8 +158,10 @@ describe('ScrapeService', () => {
     });
   });
 
+  // ─── Parsing (pure functions) ─────────────────────────────────────────────
+
   describe('parseTradingDate', () => {
-    it('doit parser une date valide en français', () => {
+    it('doit parser une date valide en francais', () => {
       const result = (service as any).parseTradingDate('15 janvier 2025 — Cours des actions');
       expect(result).toBe('2025-01-15');
     });
@@ -163,7 +171,7 @@ describe('ScrapeService', () => {
       expect(result).toBe(new Date().toISOString().slice(0, 10));
     });
 
-    it('doit gérer le mois en anglais', () => {
+    it('doit gerer le mois en anglais', () => {
       const result = (service as any).parseTradingDate('15 january 2025');
       expect(result).toBe('2025-01-15');
     });
@@ -189,7 +197,7 @@ describe('ScrapeService', () => {
   });
 
   describe('parseStocks', () => {
-    it('doit parser les actions à partir des TD', () => {
+    it('doit parser les actions a partir des TD', () => {
       const tds = Array(51).fill('').concat([
         'BRVM-SA', 'Société Amis', '10000', '1500', '1480', '1520', '2.70',
         'BRVM-SB', 'Société Bi', '5000', '800', '790', '810', '2.53',
@@ -199,13 +207,12 @@ describe('ScrapeService', () => {
       expect(tickers).toContain('BRVM-SA');
     });
 
-    it('doit ignorer les codes invalides', () => {
+    it('doit ignorer les codes invalides (moins de 2 lettres)', () => {
       const tds = Array(51).fill('').concat([
         'X', 'Too Short', '10000', '1500', '1480', '1520', '2.70',
       ]);
       const result = (service as any).parseStocks(tds);
-      const tickers = result.map((s: any) => s.ticker);
-      expect(tickers).not.toContain('X');
+      expect(result.map((s: any) => s.ticker)).not.toContain('X');
     });
 
     it('doit ignorer les entrees skip EN/FR/PO', () => {
@@ -221,6 +228,8 @@ describe('ScrapeService', () => {
       expect(tickers).toContain('BRVM-SA');
     });
   });
+
+  // ─── DB write (via mock repos) ─────────────────────────────────────────────
 
   describe('upsertPrices', () => {
     it('doit retourner 0 si aucun stock', async () => {
@@ -262,8 +271,7 @@ describe('ScrapeService', () => {
     it('doit supprimer les anciens indices du jour', async () => {
       indiceRepo.delete.mockResolvedValue({ affected: 2 });
       indiceRepo.insert.mockResolvedValue({ identifiers: [] });
-      const indices = { 'BRVM-COMP': { value: 150, change: 0 } };
-      await (service as any).upsertIndices('2025-01-01', indices);
+      await (service as any).upsertIndices('2025-01-01', { 'BRVM-COMP': { value: 150, change: 0 } });
       expect(indiceRepo.delete).toHaveBeenCalledWith({ tradingDate: '2025-01-01' });
     });
   });

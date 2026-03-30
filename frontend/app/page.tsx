@@ -2,6 +2,12 @@
 
 import { useEffect, useState } from "react";
 
+interface IndiceData {
+  brvm_c: { value: number; change: number };
+  brvm_30: { value: number; change: number };
+  brvm_prestige: { value: number; change: number };
+}
+
 interface Summary {
   portfolio: { id: string; name: string };
   totalInvested: number;
@@ -13,25 +19,20 @@ interface Summary {
   updatedAt: string;
 }
 
-interface Transaction {
-  id: string;
-  stock: { ticker: string; companyName: string };
-  type: string;
-  quantity: number;
-  price: number;
-  fees: number;
-  transactionDate: string;
-}
-
-interface MarketStats {
-  stocks: { ticker: string; last: number; change_pct: number; var_7d: number; var_30d: number }[];
+interface StockMarket {
+  ticker: string;
+  last: number;
+  change_pct: number;
+  var_7d: number;
+  var_30d: number;
 }
 
 export default function HomePage() {
   const [token, setToken] = useState<string | null>(null);
   const [summary, setSummary] = useState<Summary | null>(null);
-  const [transactions, setTransactions] = useState<Transaction[]>([]);
-  const [market, setMarket] = useState<MarketStats | null>(null);
+  const [transactions, setTransactions] = useState<any[]>([]);
+  const [indices, setIndices] = useState<IndiceData | null>(null);
+  const [market, setMarket] = useState<{ stocks: StockMarket[] } | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -61,11 +62,17 @@ export default function HomePage() {
         setTransactions(txs.slice(0, 5));
       }
 
-      // Market data
-      const mktRes = await fetch("/api/prices");
-      if (mktRes.ok) {
-        const stocks = await mktRes.json();
-        setMarket({ stocks });
+      // Market data + indices
+      const pricesRes = await fetch("/api/prices");
+      if (pricesRes.ok) {
+        const data = await pricesRes.json();
+        // data may be array or {indices, stocks}
+        if (Array.isArray(data)) {
+          setMarket({ stocks: data });
+        } else {
+          setIndices(data.indices || null);
+          setMarket({ stocks: data.stocks || [] });
+        }
       }
     } catch {}
     setLoading(false);
@@ -107,6 +114,27 @@ export default function HomePage() {
       <p style={{ color: "#475569", margin: "0 0 1.5rem", fontSize: "0.85rem" }}>
         {summary.portfolio.name} · {summary.positions.length} positions · {summary.transactionsCount} transactions
       </p>
+
+      {/* Indices BRVM */}
+      {indices && (
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1rem", marginBottom: "1.5rem" }}>
+          <div style={{ background: "#0f172a", borderRadius: "8px", padding: "0.75rem 1rem", border: "1px solid #1e3a5f", textAlign: "center" }}>
+            <div style={{ color: "#64748b", fontSize: "0.75rem", marginBottom: "0.2rem" }}>BRVM-C</div>
+            <div style={{ color: "#e2e8f0", fontSize: "1.2rem", fontWeight: 700 }}>{indices.brvm_c.value.toFixed(2)}</div>
+            <div style={{ color: indices.brvm_c.change >= 0 ? "#16a34a" : "#ef4444", fontSize: "0.8rem" }}>{indices.brvm_c.change >= 0 ? "+" : ""}{indices.brvm_c.change.toFixed(2)}%</div>
+          </div>
+          <div style={{ background: "#0f172a", borderRadius: "8px", padding: "0.75rem 1rem", border: "1px solid #1e3a5f", textAlign: "center" }}>
+            <div style={{ color: "#64748b", fontSize: "0.75rem", marginBottom: "0.2rem" }}>BRVM-30</div>
+            <div style={{ color: "#e2e8f0", fontSize: "1.2rem", fontWeight: 700 }}>{indices.brvm_30.value.toFixed(2)}</div>
+            <div style={{ color: indices.brvm_30.change >= 0 ? "#16a34a" : "#ef4444", fontSize: "0.8rem" }}>{indices.brvm_30.change >= 0 ? "+" : ""}{indices.brvm_30.change.toFixed(2)}%</div>
+          </div>
+          <div style={{ background: "#0f172a", borderRadius: "8px", padding: "0.75rem 1rem", border: "1px solid #1e3a5f", textAlign: "center" }}>
+            <div style={{ color: "#64748b", fontSize: "0.75rem", marginBottom: "0.2rem" }}>BRVM-PRESTIGE</div>
+            <div style={{ color: "#e2e8f0", fontSize: "1.2rem", fontWeight: 700 }}>{indices.brvm_prestige.value.toFixed(2)}</div>
+            <div style={{ color: indices.brvm_prestige.change >= 0 ? "#16a34a" : "#ef4444", fontSize: "0.8rem" }}>{indices.brvm_prestige.change >= 0 ? "+" : ""}{indices.brvm_prestige.change.toFixed(2)}%</div>
+          </div>
+        </div>
+      )}
 
       {/* KPI Cards */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1rem", marginBottom: "1.5rem" }}>

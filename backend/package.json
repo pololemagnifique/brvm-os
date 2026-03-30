@@ -90,6 +90,10 @@
     "testEnvironment": "node",
     "setupFilesAfterFramework": [
       "<rootDir>/test-setup.ts"
-    ]
+    ],
+    "moduleNameMapper": {
+      "^typeorm$": "<rootDir>/src/__mocks__/typeorm.ts",
+      "^@nestjs/typeorm$": "<rootDir>/src/__mocks__/@nestjs/typeorm.ts"
+    }
   }
 }
