@@ -18,7 +18,22 @@ export declare class PortfoliosService {
     createPortfolio(userId: string, dto: CreatePortfolioDto): Promise<Portfolio>;
     getTransactions(portfolioId: string, userId: string): Promise<Transaction[]>;
     addTransaction(portfolioId: string, userId: string, dto: CreateTransactionDto): Promise<Transaction>;
+    deleteTransaction(portfolioId: string, transactionId: string, userId: string): Promise<{
+        deleted: boolean;
+        id: string;
+    }>;
     getPositions(portfolioId: string, userId: string): Promise<any[]>;
+    getSummary(portfolioId: string, userId: string): Promise<{
+        portfolio: Portfolio;
+        totalInvested: number;
+        totalMarketValue: number;
+        totalUnrealizedPnl: number;
+        totalPnlPct: number;
+        positions: any[];
+        transactionsCount: number;
+        updatedAt: string;
+    }>;
+    exportCsv(portfolioId: string, userId: string): Promise<string>;
     getWatchlists(userId: string): Promise<Watchlist[]>;
     getWatchlist(watchlistId: string, userId: string): Promise<Watchlist>;
     createWatchlist(userId: string, dto: CreateWatchlistDto): Promise<Watchlist>;

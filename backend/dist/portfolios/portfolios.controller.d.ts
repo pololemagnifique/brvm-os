@@ -9,7 +9,22 @@ export declare class PortfoliosController {
     createPortfolio(req: any, dto: CreatePortfolioDto): Promise<import("./portfolio.entity").Portfolio>;
     getTransactions(id: string, req: any): Promise<import("./transaction.entity").Transaction[]>;
     addTransaction(id: string, req: any, dto: CreateTransactionDto): Promise<import("./transaction.entity").Transaction>;
+    deleteTransaction(portfolioId: string, transactionId: string, req: any): Promise<{
+        deleted: boolean;
+        id: string;
+    }>;
     getPositions(id: string, req: any): Promise<any[]>;
+    getSummary(id: string, req: any): Promise<{
+        portfolio: import("./portfolio.entity").Portfolio;
+        totalInvested: number;
+        totalMarketValue: number;
+        totalUnrealizedPnl: number;
+        totalPnlPct: number;
+        positions: any[];
+        transactionsCount: number;
+        updatedAt: string;
+    }>;
+    getTransactionsCsv(id: string, req: any, res: any): Promise<void>;
     getWatchlists(req: any): Promise<import("./watchlist.entity").Watchlist[]>;
     createWatchlist(req: any, dto: CreateWatchlistDto): Promise<import("./watchlist.entity").Watchlist>;
     getWatchlist(id: string, req: any): Promise<import("./watchlist.entity").Watchlist>;

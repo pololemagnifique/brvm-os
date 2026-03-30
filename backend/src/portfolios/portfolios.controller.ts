@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Delete, Body, Param, UseGuards, Request } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Body, Param, UseGuards, Request, Res } from '@nestjs/common';
 import { PortfoliosService } from './portfolios.service';
 import { CreatePortfolioDto } from './dto/create-portfolio.dto';
 import { CreateTransactionDto } from './dto/create-transaction.dto';
@@ -31,9 +31,30 @@ export class PortfoliosController {
     return this.portfoliosService.addTransaction(id, req.user.id, dto);
   }
 
+  @Delete('portfolios/:portfolioId/transactions/:transactionId')
+  deleteTransaction(@Param('portfolioId') portfolioId: string, @Param('transactionId') transactionId: string, @Request() req) {
+    return this.portfoliosService.deleteTransaction(portfolioId, transactionId, req.user.id);
+  }
+
   @Get('portfolios/:portfolioId/positions')
   getPositions(@Param('portfolioId') id: string, @Request() req) {
     return this.portfoliosService.getPositions(id, req.user.id);
+  }
+
+  @Get('portfolios/:portfolioId/summary')
+  getSummary(@Param('portfolioId') id: string, @Request() req) {
+    return this.portfoliosService.getSummary(id, req.user.id);
+  }
+
+  @Get('portfolios/:portfolioId/transactions.csv')
+  async getTransactionsCsv(@Param('portfolioId') id: string, @Request() req, @Res() res: any) {
+    const csv = await this.portfoliosService.exportCsv(id, req.user.id);
+    const filename = `brvm-transactions-${id.slice(0, 8)}.csv`;
+    res.set({
+      'Content-Type': 'text/csv; charset=utf-8',
+      'Content-Disposition': `attachment; filename="${filename}"`,
+    });
+    res.send(csv);
   }
 
   // WATCHLISTS

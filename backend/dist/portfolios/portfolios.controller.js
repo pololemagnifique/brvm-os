@@ -36,8 +36,23 @@ let PortfoliosController = class PortfoliosController {
     addTransaction(id, req, dto) {
         return this.portfoliosService.addTransaction(id, req.user.id, dto);
     }
+    deleteTransaction(portfolioId, transactionId, req) {
+        return this.portfoliosService.deleteTransaction(portfolioId, transactionId, req.user.id);
+    }
     getPositions(id, req) {
         return this.portfoliosService.getPositions(id, req.user.id);
+    }
+    getSummary(id, req) {
+        return this.portfoliosService.getSummary(id, req.user.id);
+    }
+    async getTransactionsCsv(id, req, res) {
+        const csv = await this.portfoliosService.exportCsv(id, req.user.id);
+        const filename = `brvm-transactions-${id.slice(0, 8)}.csv`;
+        res.set({
+            'Content-Type': 'text/csv; charset=utf-8',
+            'Content-Disposition': `attachment; filename="${filename}"`,
+        });
+        res.send(csv);
     }
     getWatchlists(req) {
         return this.portfoliosService.getWatchlists(req.user.id);
@@ -95,6 +110,15 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], PortfoliosController.prototype, "addTransaction", null);
 __decorate([
+    (0, common_1.Delete)('portfolios/:portfolioId/transactions/:transactionId'),
+    __param(0, (0, common_1.Param)('portfolioId')),
+    __param(1, (0, common_1.Param)('transactionId')),
+    __param(2, (0, common_1.Request)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String, Object]),
+    __metadata("design:returntype", void 0)
+], PortfoliosController.prototype, "deleteTransaction", null);
+__decorate([
     (0, common_1.Get)('portfolios/:portfolioId/positions'),
     __param(0, (0, common_1.Param)('portfolioId')),
     __param(1, (0, common_1.Request)()),
@@ -102,6 +126,23 @@ __decorate([
     __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", void 0)
 ], PortfoliosController.prototype, "getPositions", null);
+__decorate([
+    (0, common_1.Get)('portfolios/:portfolioId/summary'),
+    __param(0, (0, common_1.Param)('portfolioId')),
+    __param(1, (0, common_1.Request)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", void 0)
+], PortfoliosController.prototype, "getSummary", null);
+__decorate([
+    (0, common_1.Get)('portfolios/:portfolioId/transactions.csv'),
+    __param(0, (0, common_1.Param)('portfolioId')),
+    __param(1, (0, common_1.Request)()),
+    __param(2, (0, common_1.Res)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object, Object]),
+    __metadata("design:returntype", Promise)
+], PortfoliosController.prototype, "getTransactionsCsv", null);
 __decorate([
     (0, common_1.Get)('watchlists'),
     __param(0, (0, common_1.Request)()),

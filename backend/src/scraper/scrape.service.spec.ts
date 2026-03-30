@@ -1,3 +1,4 @@
+jest.mock('typeorm');
 // Mock playwright BEFORE any imports
 const mockPage = {
   setExtraHTTPHeaders: jest.fn().mockResolvedValue(undefined),
