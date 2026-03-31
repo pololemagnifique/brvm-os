@@ -35,6 +35,12 @@ interface StockDetail {
   macd: HistoryPoint[];
   macdSignal: HistoryPoint[];
   macdHistogram: HistoryPoint[];
+  bpa: number | null;
+  dividende: number | null;
+  per: number | null;
+  rendement_div: number | null;
+  volume_moy: number | null;
+  capitalisation: string | null;
 }
 
 function computeMA(data: number[], period: number): (number | null)[] {
@@ -204,6 +210,12 @@ async function getStockData(ticker: string): Promise<StockDetail | null> {
     macd,
     macdSignal,
     macdHistogram,
+    bpa: backendStock.bpa ?? null,
+    dividende: backendStock.dividende ?? null,
+    per: backendStock.per ?? null,
+    rendement_div: backendStock.rendement_div ?? null,
+    volume_moy: backendStock.volume_moy ?? null,
+    capitalisation: backendStock.capitalisation ?? null,
   };
 }
 
@@ -405,6 +417,44 @@ export default async function StockDetailPage({
 
         {/* RIGHT — Informations + MM + Statistiques */}
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          {/* Indicateurs Fondamentaux */}
+          <div
+            style={{
+              background: "var(--card)",
+              border: "1px solid var(--border)",
+              borderRadius: 12,
+              padding: 16,
+            }}
+          >
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
+              <h2 style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                Indicateurs Fondamentaux
+              </h2>
+              <span style={{ fontSize: "0.7rem", color: "rgba(245,158,11,0.7)", background: "rgba(245,158,11,0.08)", padding: "2px 8px", borderRadius: 10 }}>
+                Données non publiées par BRVM
+              </span>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px 16px" }}>
+              {[
+                ["PER", data.per ? `${data.per.toFixed(1)}x` : null],
+                ["BPA", data.bpa ? `${data.bpa.toLocaleString("fr-FR")} F` : null],
+                ["Dividende", data.dividende ? `${data.dividende.toLocaleString("fr-FR")} F` : null],
+                ["Rendement", data.rendement_div ? `${data.rendement_div.toFixed(2)}%` : null],
+                ["Volume moy.", data.volume_moy ? data.volume_moy.toLocaleString("fr-FR") : null],
+                ["Capitalisation", data.capitalisation || null],
+              ].map(([label, value]) => (
+                <div key={label as string}>
+                  <div style={{ fontSize: "0.72rem", color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 2 }}>
+                    {label}
+                  </div>
+                  <div style={{ fontFamily: "monospace", fontSize: "0.88rem", fontWeight: value ? 600 : 400, color: value ? "#e2e8f0" : "var(--muted)" }}>
+                    {value || "—"}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Company info */}
           <div
             style={{
