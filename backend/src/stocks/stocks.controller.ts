@@ -23,7 +23,7 @@ export class StocksController {
 
   @Get(':ticker')
   findOne(@Param('ticker') ticker: string) {
-    return this.stocksService.findOne(ticker);
+    return this.stocksService.getStock(ticker);
   }
 
   @Get(':ticker/history')
@@ -34,5 +34,10 @@ export class StocksController {
   @Get(':ticker/technicals')
   getTechnicals(@Param('ticker') ticker: string) {
     return this.stocksService.getTechnicals(ticker);
+  }
+
+  @Get(':ticker/corporate')
+  getCorporate(@Param('ticker') ticker: string) {
+    return this.stocksService.getCorporate(ticker);
   }
 }

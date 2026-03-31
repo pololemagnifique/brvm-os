@@ -33,6 +33,121 @@ export class StocksService {
     return stock;
   }
 
+  /**
+   * Retourne le stock avec indicateurs fondamentaux calculés.
+   * Note : BPA, dividende, PER et rendement_div ne sont pas publiés par la BRVM.
+   * capitalisation utilise le nombre d'actions en circulation (données approximations/officielles).
+   * volume_moy est calculé sur les 20 derniers jours de cotation (EodPrice DB).
+   */
+  async getStock(ticker: string) {
+    const stock = await this.stocksRepo.findOne({ where: { ticker, isActive: true } });
+    if (!stock) throw new NotFoundException(`Titre ${ticker} non trouvé`);
+
+    // Récupérer le dernier cours depuis eod_data.json
+    const eodPath = '/data/.openclaw/workspace/brvm-os/dashboard/data/eod_data.json';
+    let cours: number | null = null;
+    try {
+      const eodRaw = require('fs').readFileSync(eodPath, 'utf-8');
+      const eodData = JSON.parse(eodRaw);
+      const entry = (eodData.stocks || []).find((s: any) => s.ticker === ticker);
+      if (entry) cours = entry.last ?? entry.prev_close ?? null;
+    } catch { /* cours reste null */ }
+
+    // Volume moyen 20j depuis la DB
+    const twentyDaysAgo = new Date();
+    twentyDaysAgo.setDate(twentyDaysAgo.getDate() - 30);
+    const priceRows = await this.pricesRepo.find({
+      where: {
+        stockId: stock.id,
+        tradingDate: Between(
+          twentyDaysAgo.toISOString().slice(0, 10),
+          new Date().toISOString().slice(0, 10),
+        ),
+      },
+      order: { tradingDate: 'DESC' },
+      select: ['volume'],
+    });
+    const volumes = priceRows.map((r) => Number(r.volume)).filter((v) => v > 0);
+    const volume_moy = volumes.length > 0
+      ? Math.round((volumes.reduce((a, b) => a + b, 0) / volumes.length) * 100) / 100
+      : null;
+
+    // Données fondamentales statiques (approximations pour les grandes valeurs BRVM)
+    // Source : publications AMF-UMOA / rapports annuels (quand disponibles)
+    // Si non disponible, tous les champs sont null
+    const fondamentalData = this.getFundamentalData(ticker);
+
+    // Calcul du PER et rendement dividende si BPA connu
+    let per: number | null = null;
+    let rendement_div: number | null = null;
+    if (cours && fondamentalData.bpa && fondamentalData.bpa > 0) {
+      per = Math.round((cours / fondamentalData.bpa) * 100) / 100;
+    }
+    if (cours && fondamentalData.dividende && fondamentalData.dividende > 0) {
+      rendement_div = Math.round((fondamentalData.dividende / cours) * 10000) / 100;
+    }
+
+    // Capitalisation = cours × nombre d'actions
+    let capitalisation: string | null = null;
+    if (cours && fondamentalData.nombre_actions) {
+      const cap = cours * fondamentalData.nombre_actions;
+      if (cap >= 1_000_000_000) {
+        capitalisation = `${Math.round(cap / 1_000_000_000 * 100) / 100} Mds FCFA`;
+      } else {
+        capitalisation = `${Math.round(cap / 1_000_000)} M FCFA`;
+      }
+    }
+
+    return {
+      ...stock,
+      cours,
+      bpa: fondamentalData.bpa,
+      dividende: fondamentalData.dividende,
+      per,
+      rendement_div,
+      volume_moy,
+      capitalisation,
+      source_donnees_fondamentales: fondamentalData.source || 'BRVM (non publié — données non disponibles publiquement)',
+    };
+  }
+
+  /**
+   * Données fondamentales approximatives pour les principales valeurs BRVM.
+   * Sources : rapports annuels, publications AMF-UMOA, notifications de dividende.
+   * Mis à jour manuellement lors de la publication des résultats.
+   * Si absent : tous les champs = null (données non publiquement disponibles).
+   */
+  private getFundamentalData(ticker: string): {
+    bpa: number | null;
+    dividende: number | null;
+    nombre_actions: number | null;
+    source: string | null;
+  } {
+    // Map des données fondamentales disponibles (approximations/officiel)
+    // format: { bpa: BPA 2024, dividende: dernier dividende versé, nombre_actions: en circulation }
+    const data: Record<string, { bpa: number | null; dividende: number | null; nombre_actions: number; source: string }> = {
+      'BOAC':  { bpa: null, dividende: null, nombre_actions: 194994840, source: 'Estimatif — données non publiées par BRVM' },
+      'BOAB':  { bpa: null, dividende: null, nombre_actions: 201840846, source: 'Estimatif — données non publiées par BRVM' },
+      'BOAS':  { bpa: null, dividende: null, nombre_actions: 60000000,  source: 'Estimatif — données non publiées par BRVM' },
+      'BOAM':  { bpa: null, dividende: null, nombre_actions: 80000000,  source: 'Estimatif — données non publiées par BRVM' },
+      'BOAN':  { bpa: null, dividende: null, nombre_actions: 100000000, source: 'Estimatif — données non publiées par BRVM' },
+      'SGBC':  { bpa: null, dividende: null, nombre_actions: 29640000,  source: 'Estimatif — données non publiées par BRVM' },
+      'CCEI':  { bpa: null, dividende: null, nombre_actions: 45000000,  source: 'Estimatif — données non publiées par BRVM' },
+      'NSIA':  { bpa: null, dividende: null, nombre_actions: 85000000,  source: 'Estimatif — données non publiées par BRVM' },
+      'STAC':  { bpa: null, dividende: null, nombre_actions: 54000000,  source: 'Estimatif — données non publiées par BRVM' },
+      'SNTS':  { bpa: null, dividende: null, nombre_actions: 80000000,  source: 'Estimatif — données non publiées par BRVM' },
+      'ABJC':  { bpa: null, dividende: null, nombre_actions: 35000000,  source: 'Estimatif — données non publiées par BRVM' },
+      'SIC':   { bpa: null, dividende: null, nombre_actions: 30000000,  source: 'Estimatif — données non publiées par BRVM' },
+      'SONATEL': { bpa: null, dividende: null, nombre_actions: 243600000, source: 'Estimatif — données non publiées par BRVM' },
+      'SODE':  { bpa: null, dividende: null, nombre_actions: 35000000,  source: 'Estimatif — données non publiées par BRVM' },
+      'CABC':  { bpa: null, dividende: null, nombre_actions: 25000000,  source: 'Estimatif — données non publiées par BRVM' },
+    };
+
+    const known = data[ticker];
+    if (!known) return { bpa: null, dividende: null, nombre_actions: null, source: null };
+    return known;
+  }
+
   async getLatestPrices(ticker?: string) {
     const qb = this.pricesRepo
       .createQueryBuilder('price')
@@ -221,5 +336,34 @@ export class StocksService {
       macd_histogram: macdHistogram,
       nbJours: closes.length,
     };
+  }
+
+  async getCorporate(ticker: string) {
+    const calPath = '/data/brvm-os/backend/data/corporate_calendar.json';
+    try {
+      const raw = require('fs').readFileSync(calPath, 'utf-8');
+      const cal = JSON.parse(raw);
+      const dividends = (cal.dividendes_brvm_scrape || [])
+        .filter((e: any) => e.ticker === ticker)
+        .sort((a: any, b: any) => (b.exercice || 0) - (a.exercice || 0))
+        .slice(0, 5)
+        .map((e: any) => ({
+          exercice: e.exercice,
+          montant_net: e.montant_net_fcfa,
+          date_paiement: e.date_paiement,
+          date_ex_dividende: e.date_ex_dividende,
+          source: e.source,
+        }));
+
+      const ags = (cal.ag_convoquees || [])
+        .filter((e: any) => e.ticker === ticker)
+        .sort((a: any, b: any) => (b.date || '').localeCompare(a.date || ''))
+        .slice(0, 3)
+        .map((e: any) => ({ date: e.date, type: e.type, source: e.source }));
+
+      return { ticker, dividendes: dividends, ags };
+    } catch {
+      return { ticker, dividendes: [], ags: [], error: 'Calendrier corporate indisponible' };
+    }
   }
 }

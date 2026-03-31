@@ -3,6 +3,7 @@ import Link from "next/link";
 import fs from "fs";
 import StockChart from "./StockChart";
 import StockTechnicals from "./StockTechnicals";
+import StockCorporate from "./StockCorporate";
 
 const HISTORY_PATH =
   "/data/.openclaw/workspace/brvm-os/dashboard/data/history/all_prices.json";
@@ -397,6 +398,9 @@ export default async function StockDetailPage({
           >
             <StockTechnicals ticker={data.ticker} />
           </div>
+
+          {/* Calendrier corporate */}
+          <StockCorporate ticker={data.ticker} cours={data.last} />
         </div>
 
         {/* RIGHT — Informations + MM + Statistiques */}
