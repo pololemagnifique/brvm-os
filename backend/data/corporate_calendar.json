@@ -1,0 +1,3083 @@
+{
+  "_meta": {
+    "generated_at": "2026-03-31T19:45:00Z",
+    "source": "brvm.org / richbourse.com",
+    "sources": {
+      "dividends": [
+        "https://www.brvm.org/fr/esv/paiement-de-dividendes (officiel, paginé 40 pages)",
+        "https://www.richbourse.com/common/dividende/index (complété 2026)"
+      ],
+      "ag": [
+        "https://www.brvm.org/fr/emetteurs/type-annonces/convocations-assemblees-generales (officiel)"
+      ],
+      "publications": [
+        "https://www.brvm.org/fr/type-document/rapports-trimestriels (officiel, paginé 74 pages)"
+      ]
+    },
+    "note": "Données nulles = non trouvées sur brvm.org ou sources publiques. Richbourse 2026 = dividendes annoncés non encore sur brvm.org (zone rouge = non encore officiels BRVM).",
+    "scrape_at": "2026-03-31T19:54:53Z",
+    "scrape_pages": "0-39",
+    "scrape_new_entries": 386,
+    "scrape_added": 284
+  },
+  "dividendes_2024_payes_2025": [
+    {
+      "ticker": "SHEC",
+      "societe": "VIVO ENERGY CI",
+      "exercice": 2024,
+      "montant_net_fcfa": 85.56,
+      "date_paiement": "2025-10-22",
+      "date_ex_dividende": "2025-10-20",
+      "source": "brvm.org avis n°240"
+    },
+    {
+      "ticker": "FTSC",
+      "societe": "FILTISAC CI",
+      "exercice": 2024,
+      "montant_net_fcfa": 1320,
+      "date_paiement": "2025-09-30",
+      "date_ex_dividende": "2025-09-26",
+      "source": "brvm.org avis n°230"
+    },
+    {
+      "ticker": "PRSC",
+      "societe": "TRACTAFRIC MOTORS CI",
+      "exercice": 2024,
+      "montant_net_fcfa": 207,
+      "date_paiement": "2025-09-30",
+      "date_ex_dividende": "2025-09-26",
+      "source": "brvm.org avis n°223"
+    },
+    {
+      "ticker": "SMBC",
+      "societe": "SMB CI",
+      "exercice": 2024,
+      "montant_net_fcfa": 700,
+      "date_paiement": "2025-09-15",
+      "date_ex_dividende": "2025-09-11",
+      "source": "brvm.org avis n°211"
+    },
+    {
+      "ticker": "PALC",
+      "societe": "PALM CI",
+      "exercice": 2024,
+      "montant_net_fcfa": 513.012,
+      "date_paiement": "2025-09-10",
+      "date_ex_dividende": "2025-09-08",
+      "source": "brvm.org avis n°209"
+    },
+    {
+      "ticker": "SDCC",
+      "societe": "SODECI",
+      "exercice": 2024,
+      "montant_net_fcfa": 400,
+      "date_paiement": "2025-09-30",
+      "date_ex_dividende": "2025-09-26",
+      "source": "brvm.org avis n°206"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL CI",
+      "exercice": 2024,
+      "montant_net_fcfa": 222.36,
+      "date_paiement": "2025-09-03",
+      "date_ex_dividende": "2025-09-01",
+      "source": "brvm.org avis n°205"
+    },
+    {
+      "ticker": "STBC",
+      "societe": "SITAB",
+      "exercice": 2024,
+      "montant_net_fcfa": 2375,
+      "date_paiement": "2025-08-29",
+      "date_ex_dividende": "2025-08-27",
+      "source": "brvm.org avis n°200"
+    },
+    {
+      "ticker": "SDSC",
+      "societe": "AFRICA GLOBAL LOGISTICS CI (ex BOLLORE CI)",
+      "exercice": 2024,
+      "montant_net_fcfa": 92,
+      "date_paiement": "2025-08-29",
+      "date_ex_dividende": "2025-08-27",
+      "source": "brvm.org avis n°198"
+    },
+    {
+      "ticker": "CFAC",
+      "societe": "CFAO MOTORS CI",
+      "exercice": 2024,
+      "montant_net_fcfa": 8,
+      "date_paiement": "2025-08-19",
+      "date_ex_dividende": "2025-08-14",
+      "source": "brvm.org avis n°188"
+    },
+    {
+      "ticker": "SLBC",
+      "societe": "SOLIBRA",
+      "exercice": 2024,
+      "montant_net_fcfa": 1220,
+      "date_paiement": "2025-07-29",
+      "date_ex_dividende": "2025-07-25",
+      "source": "brvm.org avis n°167"
+    },
+    {
+      "ticker": "LNBB",
+      "societe": "LOTERIE NATIONALE DU BENIN",
+      "exercice": 2024,
+      "montant_net_fcfa": 275.5,
+      "date_paiement": "2025-07-31",
+      "date_ex_dividende": "2025-07-29",
+      "source": "brvm.org avis n°165"
+    },
+    {
+      "ticker": "CIEC",
+      "societe": "CIE CI",
+      "exercice": 2024,
+      "montant_net_fcfa": 180,
+      "date_paiement": "2025-07-31",
+      "date_ex_dividende": "2025-07-29",
+      "source": "brvm.org avis n°163"
+    },
+    {
+      "ticker": "SOGC",
+      "societe": "SOGB",
+      "exercice": 2024,
+      "montant_net_fcfa": 600,
+      "date_paiement": "2025-07-15",
+      "date_ex_dividende": "2025-07-11",
+      "source": "brvm.org avis n°146"
+    },
+    {
+      "ticker": "SGBC",
+      "societe": "SGB CI",
+      "exercice": 2024,
+      "montant_net_fcfa": 1863,
+      "date_paiement": "2025-08-05",
+      "date_ex_dividende": "2025-08-01",
+      "source": "brvm.org avis n°149"
+    },
+    {
+      "ticker": "NTLC",
+      "societe": "NESTLE CI",
+      "exercice": 2024,
+      "montant_net_fcfa": 820,
+      "date_paiement": "2025-08-18",
+      "date_ex_dividende": "2025-08-13",
+      "source": "brvm.org avis n°152"
+    },
+    {
+      "ticker": "SPHC",
+      "societe": "SAPH CI",
+      "exercice": 2024,
+      "montant_net_fcfa": 368,
+      "date_paiement": "2025-07-17",
+      "date_ex_dividende": "2025-07-15",
+      "source": "brvm.org avis n°150"
+    },
+    {
+      "ticker": "SIBC",
+      "societe": "SIB",
+      "exercice": 2024,
+      "montant_net_fcfa": 375,
+      "date_paiement": "2025-07-31",
+      "date_ex_dividende": "2025-07-29",
+      "source": "brvm.org avis n°161"
+    }
+  ],
+  "dividendes_2025_annonces": [
+    {
+      "ticker": "BOAM",
+      "societe": "BOA MALI",
+      "exercice": 2025,
+      "montant_net_fcfa": 305.04,
+      "date_ex_dividende": "2026-06-01",
+      "date_paiement": "2026-06-03",
+      "source": "richbourse.com (non encore officiel BRVM)"
+    },
+    {
+      "ticker": "BOAS",
+      "societe": "BOA SENEGAL",
+      "exercice": 2025,
+      "montant_net_fcfa": 450,
+      "date_ex_dividende": "2026-05-28",
+      "date_paiement": "2026-06-01",
+      "source": "richbourse.com (non encore officiel BRVM)"
+    },
+    {
+      "ticker": "SNTS",
+      "societe": "SONATEL SENEGAL",
+      "exercice": 2025,
+      "montant_net_fcfa": 1740,
+      "date_ex_dividende": "2026-05-21",
+      "date_paiement": "2026-05-25",
+      "source": "richbourse.com"
+    },
+    {
+      "ticker": "BOABF",
+      "societe": "BOA BURKINA FASO",
+      "exercice": 2025,
+      "montant_net_fcfa": 397,
+      "date_ex_dividende": "2026-04-22",
+      "date_paiement": "2026-04-23",
+      "source": "richbourse.com"
+    },
+    {
+      "ticker": "PALC",
+      "societe": "PALM CI",
+      "exercice": 2025,
+      "montant_net_fcfa": 441.76,
+      "date_ex_dividende": null,
+      "date_paiement": null,
+      "source": "richbourse.com (en rouge = non officiel BRVM)"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL CI",
+      "exercice": 2025,
+      "montant_net_fcfa": 139.77,
+      "date_ex_dividende": null,
+      "date_paiement": null,
+      "source": "richbourse.com (en rouge)"
+    },
+    {
+      "ticker": "SPHC",
+      "societe": "SAPH CI",
+      "exercice": 2025,
+      "montant_net_fcfa": 430.32,
+      "date_ex_dividende": null,
+      "date_paiement": null,
+      "source": "richbourse.com (en rouge)"
+    },
+    {
+      "ticker": "ORAC",
+      "societe": "ORANGE CI",
+      "exercice": 2025,
+      "montant_net_fcfa": 704,
+      "date_ex_dividende": null,
+      "date_paiement": null,
+      "source": "richbourse.com (en rouge)"
+    },
+    {
+      "ticker": "CABC",
+      "societe": "SICABLE CI",
+      "exercice": 2025,
+      "montant_net_fcfa": 152.02,
+      "date_ex_dividende": null,
+      "date_paiement": null,
+      "source": "richbourse.com (en rouge)"
+    },
+    {
+      "ticker": "BOAC",
+      "societe": "BOA CI",
+      "exercice": 2025,
+      "montant_net_fcfa": 594.5,
+      "date_ex_dividende": null,
+      "date_paiement": null,
+      "source": "richbourse.com (en rouge)"
+    },
+    {
+      "note": "BOA NIGER (BOAN) a décidé de ne pas verser de dividende en 2025"
+    }
+  ],
+  "assemblees_generales_2026": [
+    {
+      "date_ag": "2026-03-30",
+      "societe": "BANK OF AFRICA CI",
+      "ticker": "BOAC",
+      "type": "ordinaire",
+      "source": "brvm.org avis 2026-03-27"
+    },
+    {
+      "date_ag": "2026-03-30",
+      "societe": "SONATEL SENEGAL",
+      "ticker": "SNTS",
+      "type": "ordinaire",
+      "source": "brvm.org avis 2026-03-27"
+    },
+    {
+      "date_ag": "2026-03-25",
+      "societe": "BANK OF AFRICA ML",
+      "ticker": "BOAM",
+      "type": "ordinaire",
+      "source": "brvm.org avis 2026-03-24"
+    },
+    {
+      "date_ag": "2026-03-25",
+      "societe": "SAPH CI",
+      "ticker": "SPHC",
+      "type": "ordinaire",
+      "source": "brvm.org avis 2026-03-25"
+    },
+    {
+      "date_ag": "2026-03-25",
+      "societe": "PALM CI",
+      "ticker": "PALC",
+      "type": "ordinaire",
+      "source": "brvm.org avis 2026-03-25"
+    },
+    {
+      "date_ag": "2026-03-19",
+      "societe": "BANK OF AFRICA NG",
+      "ticker": "BOAN",
+      "type": "ordinaire",
+      "source": "brvm.org avis 2026-03-18"
+    },
+    {
+      "date_ag": "2026-03-18",
+      "societe": "BANK OF AFRICA SN",
+      "ticker": "BOAS",
+      "type": "ordinaire",
+      "source": "brvm.org avis 2026-03-17"
+    },
+    {
+      "date_ag": "2026-03-12",
+      "societe": "UNILEVER CI",
+      "ticker": "UNLC",
+      "type": "ordinaire",
+      "source": "brvm.org avis 2026-03-11"
+    },
+    {
+      "date_ag": "2026-03-10",
+      "societe": "SICABLE CI",
+      "ticker": "CABC",
+      "type": "ordinaire",
+      "source": "brvm.org avis 2026-03-10"
+    },
+    {
+      "date_ag": "2026-03-06",
+      "societe": "BANK OF AFRICA BF",
+      "ticker": "BOABF",
+      "type": "ordinaire",
+      "source": "brvm.org avis 2026-03-06"
+    }
+  ],
+  "rapports_trimestriels_recents": [
+    {
+      "societe": "SITAB CI",
+      "ticker": "STBC",
+      "type": "4eme trimestre 2025",
+      "date": "2026",
+      "source": "brvm.org"
+    },
+    {
+      "societe": "ERIUM CI (ex AIR LIQUIDE CI)",
+      "ticker": "SIVC",
+      "type": "3eme trimestre 2025",
+      "date": "2025",
+      "source": "brvm.org"
+    },
+    {
+      "societe": "CFAO MOTORS CI",
+      "ticker": "CFAC",
+      "type": "3eme trimestre 2025",
+      "date": "2025",
+      "source": "brvm.org"
+    },
+    {
+      "societe": "BOA BENIN",
+      "ticker": "BOAB",
+      "type": "3eme trimestre 2025",
+      "date": "2025",
+      "source": "brvm.org"
+    },
+    {
+      "societe": "AFRICA GLOBAL LOGISTICS CI",
+      "ticker": "SDSC",
+      "type": "3eme trimestre 2025",
+      "date": "2025",
+      "source": "brvm.org"
+    },
+    {
+      "societe": "BOA CI",
+      "ticker": "BOAC",
+      "type": "3eme trimestre 2025",
+      "date": "2025",
+      "source": "brvm.org"
+    },
+    {
+      "societe": "VIVO ENERGY CI",
+      "ticker": "SHEC",
+      "type": "3eme trimestre 2025",
+      "date": "2025",
+      "source": "brvm.org"
+    },
+    {
+      "societe": "BIIC BENIN",
+      "ticker": "BICB",
+      "type": "3eme trimestre 2025",
+      "date": "2025",
+      "source": "brvm.org"
+    }
+  ],
+  "calendrier_par_ticker": {
+    "note": "Calendrier consolidé par action - données 2026-03-31. ticker manquant = aucune info corporate disponible publiquement."
+  },
+  "lacunes": {
+    "dividendes_historiques": "Les dividendes antérieurs à 2024 ne sont pas sur brvm.org. Source possible : richbourse.com (offre premium) ou consultation individuelle des avis BRVM sur 40 pages paginées.",
+    "ag_futures": "Au-delà de mars 2026, aucune convocation n'est publiquement disponible sur brvm.org. Les AG concernent surtout l'approbation des résultats 2025 (AGO) qui se tiennent typiquement avril-mai.",
+    "calendrier_publications_resultats": "Il n'existe pas de calendrier unifié des publications de résultats sur brvm.org. Les rapports trimestriels apparaissent page par page. La date limite réglementaire est le 30 avril pour les résultats annuels.",
+    "regle_rappel": "Résultats annuels : publication au plus tard 30 avril. La BRVM publie des communiqués pour les résultats annuels et trimestriels dans la section /fr/type-document/rapports-trimestriels (74 pages).",
+    "sources_alternatives": [
+      "CREPMF (www.crepmf.org) - avis de conformité des émissions",
+      "AMF-UMOA (www.amf-umoa.org) - décisions et avis régionaux",
+      "Sites officiels des sociétés (ex: www.sonatel.sn, www.vivogroup.com)",
+      "richbourse.com - dividendes historiqués (payant)",
+      "dabafinance.com - guides et synthèses gratuits"
+    ]
+  },
+  "plan_action": [
+    "1. Scraping complet dividendes : boucler les 40 pages brvm.org/fr/esv/paiement-de-dividendes pour construire l'historique exhaustif. Extension de scrape_brvm.py.",
+    "2. AG futures : surveillance hebdomadaire de /fr/emetteurs/type-annonces/convocations-assemblees-generales pour détecter les nouvelles convocations (typiquement mars-mai pour AGO résultats 2025).",
+    "3. Publications résultats : page /fr/type-document/rapports-trimestriels (74 pages) à scraper intégralement. Résultats annuels attendus avant le 30 avril 2026.",
+    "4. Source premium richbourse.com : les dividendes 2026 non-officiels (en rouge) nécessitent validation via les PDF officiels brvm.org pour être intégrés comme 'annoncés'.",
+    "5.考虑 API CREPMF : le CREPMF pourrait avoir un flux de données structuré pour les événements corporate."
+  ],
+  "dividendes_brvm_scrape": [
+    {
+      "ticker": "SHEC",
+      "societe": "VIVO ENERGY CI",
+      "exercice": 2024,
+      "montant_net_fcfa": 85.56,
+      "date_paiement": "2025-10-22",
+      "date_ex_dividende": "2025-10-20",
+      "source": "brvm.org page 0"
+    },
+    {
+      "ticker": "FTSC",
+      "societe": "FILTISAC CI",
+      "exercice": 2024,
+      "montant_net_fcfa": 1320.0,
+      "date_paiement": "2025-09-30",
+      "date_ex_dividende": "2025-09-26",
+      "source": "brvm.org page 0"
+    },
+    {
+      "ticker": "PRSC",
+      "societe": "TRACTAFRIC CI",
+      "exercice": 2024,
+      "montant_net_fcfa": 207.0,
+      "date_paiement": "2025-09-30",
+      "date_ex_dividende": "2025-09-26",
+      "source": "brvm.org page 0"
+    },
+    {
+      "ticker": "BIIC",
+      "societe": "BIIC",
+      "exercice": 2024,
+      "montant_net_fcfa": 254.6,
+      "date_paiement": "2025-09-15",
+      "date_ex_dividende": "2025-09-11",
+      "source": "brvm.org page 0"
+    },
+    {
+      "ticker": "SMBC",
+      "societe": "SMB",
+      "exercice": 2024,
+      "montant_net_fcfa": 700.0,
+      "date_paiement": "2025-09-15",
+      "date_ex_dividende": "2025-09-11",
+      "source": "brvm.org page 0"
+    },
+    {
+      "ticker": "PALC",
+      "societe": "PALM CI",
+      "exercice": 2024,
+      "montant_net_fcfa": 513.012,
+      "date_paiement": "2025-09-10",
+      "date_ex_dividende": "2025-09-08",
+      "source": "brvm.org page 0"
+    },
+    {
+      "ticker": "SDCC",
+      "societe": "SODECI",
+      "exercice": 2024,
+      "montant_net_fcfa": 400.0,
+      "date_paiement": "2025-09-30",
+      "date_ex_dividende": "2025-09-26",
+      "source": "brvm.org page 0"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL",
+      "exercice": 2024,
+      "montant_net_fcfa": 222.3578,
+      "date_paiement": "2025-09-03",
+      "date_ex_dividende": "2025-09-01",
+      "source": "brvm.org page 0"
+    },
+    {
+      "ticker": "STBC",
+      "societe": "SITAB",
+      "exercice": 2024,
+      "montant_net_fcfa": 2375.0,
+      "date_paiement": "2025-08-29",
+      "date_ex_dividende": "2025-08-27",
+      "source": "brvm.org page 0"
+    },
+    {
+      "ticker": "SDSC",
+      "societe": "BOLLORE TRANSPORT & LOGISTICS",
+      "exercice": 2024,
+      "montant_net_fcfa": 92.0,
+      "date_paiement": "2025-08-29",
+      "date_ex_dividende": "2025-08-27",
+      "source": "brvm.org page 0"
+    },
+    {
+      "ticker": "CFAC",
+      "societe": "CFAO MOTORS CI",
+      "exercice": 2024,
+      "montant_net_fcfa": 8.0,
+      "date_paiement": "2025-08-19",
+      "date_ex_dividende": "2025-08-14",
+      "source": "brvm.org page 1"
+    },
+    {
+      "ticker": "SLBC",
+      "societe": "SOLIBRA",
+      "exercice": 2024,
+      "montant_net_fcfa": 1220.0,
+      "date_paiement": "2025-07-29",
+      "date_ex_dividende": "2025-07-25",
+      "source": "brvm.org page 1"
+    },
+    {
+      "ticker": "LNBB",
+      "societe": "LNB",
+      "exercice": 2024,
+      "montant_net_fcfa": 275.5,
+      "date_paiement": "2025-07-31",
+      "date_ex_dividende": "2025-07-29",
+      "source": "brvm.org page 1"
+    },
+    {
+      "ticker": "CIEC",
+      "societe": "CIE CI",
+      "exercice": 2024,
+      "montant_net_fcfa": 180.0,
+      "date_paiement": "2025-07-31",
+      "date_ex_dividende": "2025-07-29",
+      "source": "brvm.org page 1"
+    },
+    {
+      "ticker": "SIBC",
+      "societe": "SIB",
+      "exercice": 2024,
+      "montant_net_fcfa": 375.0,
+      "date_paiement": "2025-07-31",
+      "date_ex_dividende": "2025-07-29",
+      "source": "brvm.org page 1"
+    },
+    {
+      "ticker": "NTLC",
+      "societe": "NESTLE CI",
+      "exercice": 2024,
+      "montant_net_fcfa": 820.0,
+      "date_paiement": "2025-08-18",
+      "date_ex_dividende": "2025-08-13",
+      "source": "brvm.org page 1"
+    },
+    {
+      "ticker": "SPHC",
+      "societe": "SAPH CI",
+      "exercice": 2024,
+      "montant_net_fcfa": 368.0,
+      "date_paiement": "2025-07-17",
+      "date_ex_dividende": "2025-07-15",
+      "source": "brvm.org page 1"
+    },
+    {
+      "ticker": "SGBC",
+      "societe": "SGB CI",
+      "exercice": 2024,
+      "montant_net_fcfa": 1863.0,
+      "date_paiement": "2025-08-05",
+      "date_ex_dividende": "2025-08-01",
+      "source": "brvm.org page 1"
+    },
+    {
+      "ticker": "SOGC",
+      "societe": "SOGB",
+      "exercice": 2024,
+      "montant_net_fcfa": 600.0,
+      "date_paiement": "2025-07-15",
+      "date_ex_dividende": "2025-07-11",
+      "source": "brvm.org page 1"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL SENEGAL S.A.",
+      "exercice": 2024,
+      "montant_net_fcfa": 222.4,
+      "date_paiement": "2025-07-11",
+      "date_ex_dividende": "2025-07-09",
+      "source": "brvm.org page 2"
+    },
+    {
+      "ticker": "BOAM",
+      "societe": "BANK OF AFRICA ML",
+      "exercice": 2024,
+      "montant_net_fcfa": 237.15,
+      "date_paiement": "2025-06-03",
+      "date_ex_dividende": "2025-05-30",
+      "source": "brvm.org page 2"
+    },
+    {
+      "ticker": "ORAC",
+      "societe": "ORANGE CI",
+      "exercice": 2024,
+      "montant_net_fcfa": 750.0,
+      "date_paiement": "2025-06-11",
+      "date_ex_dividende": "2025-06-05",
+      "source": "brvm.org page 2"
+    },
+    {
+      "ticker": "BOAN",
+      "societe": "BANK OF AFRICA NG",
+      "exercice": 2024,
+      "montant_net_fcfa": 209.25,
+      "date_paiement": "2025-06-03",
+      "date_ex_dividende": "2025-05-30",
+      "source": "brvm.org page 2"
+    },
+    {
+      "ticker": "CABC",
+      "societe": "SICABLE",
+      "exercice": 2024,
+      "montant_net_fcfa": 128.1,
+      "date_paiement": "2025-06-02",
+      "date_ex_dividende": "2025-05-28",
+      "source": "brvm.org page 2"
+    },
+    {
+      "ticker": "BOAS",
+      "societe": "BANK OF AFRICA SN",
+      "exercice": 2024,
+      "montant_net_fcfa": 350.0,
+      "date_paiement": "2025-06-02",
+      "date_ex_dividende": "2025-05-28",
+      "source": "brvm.org page 3"
+    },
+    {
+      "ticker": "ECOC",
+      "societe": "ECOBANK CI",
+      "exercice": 2024,
+      "montant_net_fcfa": 804.0,
+      "date_paiement": "2025-05-30",
+      "date_ex_dividende": "2025-05-31",
+      "source": "brvm.org page 3"
+    },
+    {
+      "ticker": "BOAC",
+      "societe": "BANK OF AFRICA CI",
+      "exercice": 2024,
+      "montant_net_fcfa": 469.0,
+      "date_paiement": "2025-05-20",
+      "date_ex_dividende": "2025-05-16",
+      "source": "brvm.org page 3"
+    },
+    {
+      "ticker": "SNTS",
+      "societe": "SONATEL",
+      "exercice": 2024,
+      "montant_net_fcfa": 1655.0,
+      "date_paiement": "2025-05-22",
+      "date_ex_dividende": "2025-05-20",
+      "source": "brvm.org page 3"
+    },
+    {
+      "ticker": "BOABF",
+      "societe": "BANK OF AFRICA BF",
+      "exercice": 2024,
+      "montant_net_fcfa": 428.0,
+      "date_paiement": "2025-04-22",
+      "date_ex_dividende": "2025-04-17",
+      "source": "brvm.org page 3"
+    },
+    {
+      "ticker": "SDSC",
+      "societe": "BOLLORE TRANSPORT & LOGISTICS",
+      "exercice": 2023,
+      "montant_net_fcfa": 92.0,
+      "date_paiement": "2024-12-12",
+      "date_ex_dividende": "2024-12-10",
+      "source": "brvm.org page 3"
+    },
+    {
+      "ticker": "FTSC",
+      "societe": "FILTISAC CI",
+      "exercice": 2023,
+      "montant_net_fcfa": 143.1,
+      "date_paiement": "2024-09-30",
+      "date_ex_dividende": "2024-09-26",
+      "source": "brvm.org page 3"
+    },
+    {
+      "ticker": "SRVC",
+      "societe": "SERVAIR ABIDJAN CI",
+      "exercice": 2023,
+      "montant_net_fcfa": 206.195,
+      "date_paiement": "2024-09-30",
+      "date_ex_dividende": "2024-09-26",
+      "source": "brvm.org page 3"
+    },
+    {
+      "ticker": "SHEC",
+      "societe": "VIVO ENERGY CI",
+      "exercice": 2023,
+      "montant_net_fcfa": 57.0,
+      "date_paiement": "2024-09-27",
+      "date_ex_dividende": "2024-09-25",
+      "source": "brvm.org page 3"
+    },
+    {
+      "ticker": "PRSC",
+      "societe": "TRACTAFRIC CI",
+      "exercice": 2023,
+      "montant_net_fcfa": 182.7,
+      "date_paiement": "2024-09-24",
+      "date_ex_dividende": "2024-09-20",
+      "source": "brvm.org page 4"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL",
+      "exercice": 2023,
+      "montant_net_fcfa": 199.5353,
+      "date_paiement": "2024-09-17",
+      "date_ex_dividende": "2024-09-13",
+      "source": "brvm.org page 4"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL",
+      "exercice": 2023,
+      "montant_net_fcfa": 199.5353,
+      "date_paiement": "2024-09-17",
+      "date_ex_dividende": "2024-09-12",
+      "source": "brvm.org page 4"
+    },
+    {
+      "ticker": "SMBC",
+      "societe": "SMB",
+      "exercice": 2023,
+      "montant_net_fcfa": 1080.0,
+      "date_paiement": "2024-09-30",
+      "date_ex_dividende": "2024-09-26",
+      "source": "brvm.org page 4"
+    },
+    {
+      "ticker": "CFAC",
+      "societe": "CFAO MOTORS CI",
+      "exercice": 2023,
+      "montant_net_fcfa": 15.87,
+      "date_paiement": "2024-08-30",
+      "date_ex_dividende": "2024-08-28",
+      "source": "brvm.org page 4"
+    },
+    {
+      "ticker": "SDCC",
+      "societe": "SODECI",
+      "exercice": 2023,
+      "montant_net_fcfa": 481.5,
+      "date_paiement": "2024-09-25",
+      "date_ex_dividende": "2024-09-23",
+      "source": "brvm.org page 4"
+    },
+    {
+      "ticker": "SPHC",
+      "societe": "SAPH CI",
+      "exercice": 2023,
+      "montant_net_fcfa": 64.8,
+      "date_paiement": "2024-08-12",
+      "date_ex_dividende": "2024-08-08",
+      "source": "brvm.org page 4"
+    },
+    {
+      "ticker": "SOGC",
+      "societe": "SOGB",
+      "exercice": 2023,
+      "montant_net_fcfa": 207.0,
+      "date_paiement": "2024-08-06",
+      "date_ex_dividende": "2024-08-02",
+      "source": "brvm.org page 4"
+    },
+    {
+      "ticker": "SIBC",
+      "societe": "SIB",
+      "exercice": 2023,
+      "montant_net_fcfa": 495.0,
+      "date_paiement": "2024-07-31",
+      "date_ex_dividende": "2024-07-29",
+      "source": "brvm.org page 4"
+    },
+    {
+      "ticker": "STBC",
+      "societe": "SITAB",
+      "exercice": 2023,
+      "montant_net_fcfa": 675.0,
+      "date_paiement": "2024-07-29",
+      "date_ex_dividende": "2024-07-25",
+      "source": "brvm.org page 4"
+    },
+    {
+      "ticker": "NTLC",
+      "societe": "NESTLE CI",
+      "exercice": 2023,
+      "montant_net_fcfa": 675.0,
+      "date_paiement": "2024-07-20",
+      "date_ex_dividende": "2024-07-16",
+      "source": "brvm.org page 5"
+    },
+    {
+      "ticker": "CIEC",
+      "societe": "CIE CI",
+      "exercice": 2023,
+      "montant_net_fcfa": 171.0,
+      "date_paiement": "2024-07-30",
+      "date_ex_dividende": "2024-07-26",
+      "source": "brvm.org page 5"
+    },
+    {
+      "ticker": "PALC",
+      "societe": "PALM CI",
+      "exercice": 2023,
+      "montant_net_fcfa": 563.306,
+      "date_paiement": "2024-07-26",
+      "date_ex_dividende": "2024-07-24",
+      "source": "brvm.org page 5"
+    },
+    {
+      "ticker": "BOAS",
+      "societe": "BANK OF AFRICA SN",
+      "exercice": 2023,
+      "montant_net_fcfa": 300.0,
+      "date_paiement": "2024-06-27",
+      "date_ex_dividende": "2024-06-25",
+      "source": "brvm.org page 5"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL SENEGAL S.A.",
+      "exercice": 2023,
+      "montant_net_fcfa": 207.58,
+      "date_paiement": "2024-06-28",
+      "date_ex_dividende": "2024-06-26",
+      "source": "brvm.org page 5"
+    },
+    {
+      "ticker": "SGBC",
+      "societe": "SGB CI",
+      "exercice": 2022,
+      "montant_net_fcfa": 1553.847,
+      "date_paiement": "2024-06-25",
+      "date_ex_dividende": "2024-06-21",
+      "source": "brvm.org page 6"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL SENEGAL S.A.",
+      "exercice": 2023,
+      "montant_net_fcfa": 207.58,
+      "date_paiement": "2024-06-29",
+      "date_ex_dividende": "2024-06-27",
+      "source": "brvm.org page 6"
+    },
+    {
+      "ticker": "ORAC",
+      "societe": "ORANGE CI",
+      "exercice": 2023,
+      "montant_net_fcfa": 780.0,
+      "date_paiement": "2024-06-03",
+      "date_ex_dividende": "2024-05-30",
+      "source": "brvm.org page 6"
+    },
+    {
+      "ticker": "CABC",
+      "societe": "SICABLE",
+      "exercice": 2023,
+      "montant_net_fcfa": null,
+      "date_paiement": "2024-05-31",
+      "date_ex_dividende": "2024-05-29",
+      "source": "brvm.org page 6"
+    },
+    {
+      "ticker": "ECOC",
+      "societe": "ECOBANK CI",
+      "exercice": 2023,
+      "montant_net_fcfa": 594.0,
+      "date_paiement": "2024-05-30",
+      "date_ex_dividende": "2024-05-28",
+      "source": "brvm.org page 6"
+    },
+    {
+      "ticker": "BOAM",
+      "societe": "BANK OF AFRICA ML",
+      "exercice": 2023,
+      "montant_net_fcfa": 144.0,
+      "date_paiement": "2024-05-21",
+      "date_ex_dividende": "2024-05-16",
+      "source": "brvm.org page 6"
+    },
+    {
+      "ticker": "SNTS",
+      "societe": "SONATEL",
+      "exercice": 2023,
+      "montant_net_fcfa": 1575.0,
+      "date_paiement": "2024-05-17",
+      "date_ex_dividende": "2024-05-15",
+      "source": "brvm.org page 6"
+    },
+    {
+      "ticker": "BOAN",
+      "societe": "BANK OF AFRICA NG",
+      "exercice": 2023,
+      "montant_net_fcfa": 609.15,
+      "date_paiement": "2024-05-31",
+      "date_ex_dividende": "2024-05-29",
+      "source": "brvm.org page 6"
+    },
+    {
+      "ticker": "BOABF",
+      "societe": "BANK OF AFRICA BF",
+      "exercice": 2023,
+      "montant_net_fcfa": 704.0,
+      "date_paiement": "2024-05-06",
+      "date_ex_dividende": "2024-05-02",
+      "source": "brvm.org page 6"
+    },
+    {
+      "ticker": "BOAC",
+      "societe": "BANK OF AFRICA CI",
+      "exercice": 2023,
+      "montant_net_fcfa": 684.0,
+      "date_paiement": "2024-04-29",
+      "date_ex_dividende": "2024-04-25",
+      "source": "brvm.org page 7"
+    },
+    {
+      "ticker": "SHEC",
+      "societe": "VIVO ENERGY CI",
+      "exercice": 2022,
+      "montant_net_fcfa": 53.0,
+      "date_paiement": "2023-12-28",
+      "date_ex_dividende": "2023-12-26",
+      "source": "brvm.org page 7"
+    },
+    {
+      "ticker": "SDSC",
+      "societe": "BOLLORE TRANSPORT & LOGISTICS",
+      "exercice": 2022,
+      "montant_net_fcfa": 92.0,
+      "date_paiement": "2023-11-20",
+      "date_ex_dividende": "2023-11-16",
+      "source": "brvm.org page 7"
+    },
+    {
+      "ticker": "SPHC",
+      "societe": "SAPH CI",
+      "exercice": 2022,
+      "montant_net_fcfa": 294.3,
+      "date_paiement": "2023-09-29",
+      "date_ex_dividende": "2023-09-26",
+      "source": "brvm.org page 7"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL",
+      "exercice": 2022,
+      "montant_net_fcfa": 175.5258,
+      "date_paiement": "2023-09-21",
+      "date_ex_dividende": "2023-09-19",
+      "source": "brvm.org page 7"
+    },
+    {
+      "ticker": "PRSC",
+      "societe": "TRACTAFRIC CI",
+      "exercice": 2022,
+      "montant_net_fcfa": 224.1,
+      "date_paiement": "2023-09-13",
+      "date_ex_dividende": "2023-09-11",
+      "source": "brvm.org page 7"
+    },
+    {
+      "ticker": "CFAC",
+      "societe": "CFAO MOTORS CI",
+      "exercice": 2022,
+      "montant_net_fcfa": 27.45,
+      "date_paiement": "2023-09-15",
+      "date_ex_dividende": "2023-09-13",
+      "source": "brvm.org page 7"
+    },
+    {
+      "ticker": "SDCC",
+      "societe": "SODECI",
+      "exercice": 2022,
+      "montant_net_fcfa": 450.0,
+      "date_paiement": "2023-09-15",
+      "date_ex_dividende": "2023-09-13",
+      "source": "brvm.org page 7"
+    },
+    {
+      "ticker": "SIBC",
+      "societe": "SIB",
+      "exercice": 2022,
+      "montant_net_fcfa": 495.0,
+      "date_paiement": "2023-08-11",
+      "date_ex_dividende": "2023-08-09",
+      "source": "brvm.org page 8"
+    },
+    {
+      "ticker": "CABC",
+      "societe": "SICABLE",
+      "exercice": 2022,
+      "montant_net_fcfa": 69.0,
+      "date_paiement": "2023-08-02",
+      "date_ex_dividende": "2023-07-31",
+      "source": "brvm.org page 8"
+    },
+    {
+      "ticker": "SRVC",
+      "societe": "SERVAIR ABIDJAN CI",
+      "exercice": 2022,
+      "montant_net_fcfa": 92.0,
+      "date_paiement": "2023-08-31",
+      "date_ex_dividende": "2023-08-29",
+      "source": "brvm.org page 8"
+    },
+    {
+      "ticker": "NTLC",
+      "societe": "NESTLE CI",
+      "exercice": 2022,
+      "montant_net_fcfa": 728.1,
+      "date_paiement": "2023-08-08",
+      "date_ex_dividende": "2023-08-03",
+      "source": "brvm.org page 8"
+    },
+    {
+      "ticker": "STBC",
+      "societe": "SITAB",
+      "exercice": 2022,
+      "montant_net_fcfa": 551.0,
+      "date_paiement": "2023-07-27",
+      "date_ex_dividende": "2023-07-25",
+      "source": "brvm.org page 8"
+    },
+    {
+      "ticker": "CIEC",
+      "societe": "CIE CI",
+      "exercice": 2022,
+      "montant_net_fcfa": 157.5,
+      "date_paiement": "2023-07-31",
+      "date_ex_dividende": "2023-07-27",
+      "source": "brvm.org page 8"
+    },
+    {
+      "ticker": "SOGC",
+      "societe": "SOGB",
+      "exercice": 2022,
+      "montant_net_fcfa": 558.0,
+      "date_paiement": "2023-07-17",
+      "date_ex_dividende": "2023-07-13",
+      "source": "brvm.org page 8"
+    },
+    {
+      "ticker": "PALC",
+      "societe": "PALM CI",
+      "exercice": 2022,
+      "montant_net_fcfa": 1213.632,
+      "date_paiement": "2023-07-19",
+      "date_ex_dividende": "2023-07-17",
+      "source": "brvm.org page 8"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL SENEGAL S.A.",
+      "exercice": 2022,
+      "montant_net_fcfa": 241.01,
+      "date_paiement": "2023-07-13",
+      "date_ex_dividende": "2023-07-11",
+      "source": "brvm.org page 9"
+    },
+    {
+      "ticker": "ECOC",
+      "societe": "ECOBANK TG",
+      "exercice": 2022,
+      "montant_net_fcfa": 0.6048,
+      "date_paiement": "2023-06-08",
+      "date_ex_dividende": "2023-06-06",
+      "source": "brvm.org page 9"
+    },
+    {
+      "ticker": "ORAC",
+      "societe": "ORANGE CI",
+      "exercice": 2022,
+      "montant_net_fcfa": 752.76,
+      "date_paiement": "2023-06-13",
+      "date_ex_dividende": "2023-06-16",
+      "source": "brvm.org page 9"
+    },
+    {
+      "ticker": "ECOC",
+      "societe": "ECOBANK CI",
+      "exercice": 2022,
+      "montant_net_fcfa": 549.0,
+      "date_paiement": "2023-05-30",
+      "date_ex_dividende": "2023-05-25",
+      "source": "brvm.org page 9"
+    },
+    {
+      "ticker": "SGBC",
+      "societe": "SGB CI",
+      "exercice": 2022,
+      "montant_net_fcfa": 1112.43,
+      "date_paiement": "2023-05-31",
+      "date_ex_dividende": "2023-05-26",
+      "source": "brvm.org page 9"
+    },
+    {
+      "ticker": "SNTS",
+      "societe": "SONATEL",
+      "exercice": 2022,
+      "montant_net_fcfa": 1500.0,
+      "date_paiement": "2023-05-17",
+      "date_ex_dividende": "2023-05-15",
+      "source": "brvm.org page 9"
+    },
+    {
+      "ticker": "BOAS",
+      "societe": "BANK OF AFRICA SN",
+      "exercice": 2022,
+      "montant_net_fcfa": 187.5,
+      "date_paiement": "2023-06-01",
+      "date_ex_dividende": "2023-05-30",
+      "source": "brvm.org page 10"
+    },
+    {
+      "ticker": "BOAN",
+      "societe": "BANK OF AFRICA NG",
+      "exercice": 2022,
+      "montant_net_fcfa": 613.8,
+      "date_paiement": "2023-05-25",
+      "date_ex_dividende": "2023-05-23",
+      "source": "brvm.org page 10"
+    },
+    {
+      "ticker": "BOABF",
+      "societe": "BANK OF AFRICA BF",
+      "exercice": 2022,
+      "montant_net_fcfa": 577.0,
+      "date_paiement": "2023-05-05",
+      "date_ex_dividende": "2023-05-03",
+      "source": "brvm.org page 10"
+    },
+    {
+      "ticker": "BOAC",
+      "societe": "BANK OF AFRICA CI",
+      "exercice": 2022,
+      "montant_net_fcfa": 540.0,
+      "date_paiement": "2023-04-28",
+      "date_ex_dividende": "2023-04-26",
+      "source": "brvm.org page 10"
+    },
+    {
+      "ticker": "SHEC",
+      "societe": "VIVO ENERGY CI",
+      "exercice": 2021,
+      "montant_net_fcfa": 29.0,
+      "date_paiement": "2022-10-28",
+      "date_ex_dividende": "2022-10-26",
+      "source": "brvm.org page 10"
+    },
+    {
+      "ticker": "SDCC",
+      "societe": "SODECI",
+      "exercice": 2021,
+      "montant_net_fcfa": 432.0,
+      "date_paiement": "2022-10-21",
+      "date_ex_dividende": "2022-10-19",
+      "source": "brvm.org page 10"
+    },
+    {
+      "ticker": "SMBC",
+      "societe": "SMB",
+      "exercice": 2021,
+      "montant_net_fcfa": 720.0,
+      "date_paiement": "2022-08-24",
+      "date_ex_dividende": "2022-08-22",
+      "source": "brvm.org page 10"
+    },
+    {
+      "ticker": "SRVC",
+      "societe": "SERVAIR ABIDJAN CI",
+      "exercice": 2021,
+      "montant_net_fcfa": 57.73,
+      "date_paiement": "2022-08-24",
+      "date_ex_dividende": "2022-08-22",
+      "source": "brvm.org page 10"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL",
+      "exercice": 2021,
+      "montant_net_fcfa": 159.2874,
+      "date_paiement": "2022-08-25",
+      "date_ex_dividende": "2022-08-23",
+      "source": "brvm.org page 10"
+    },
+    {
+      "ticker": "SLBC",
+      "societe": "SOLIBRA",
+      "exercice": 2021,
+      "montant_net_fcfa": 4050.0,
+      "date_paiement": "2022-08-12",
+      "date_ex_dividende": "2022-08-10",
+      "source": "brvm.org page 10"
+    },
+    {
+      "ticker": "SPHC",
+      "societe": "SAPH CI",
+      "exercice": 2021,
+      "montant_net_fcfa": 365.4,
+      "date_paiement": "2022-08-04",
+      "date_ex_dividende": "2022-08-02",
+      "source": "brvm.org page 11"
+    },
+    {
+      "ticker": "NTLC",
+      "societe": "NESTLE CI",
+      "exercice": 2021,
+      "montant_net_fcfa": 856.8,
+      "date_paiement": "2022-08-02",
+      "date_ex_dividende": "2022-07-29",
+      "source": "brvm.org page 11"
+    },
+    {
+      "ticker": "CFAC",
+      "societe": "CFAO MOTORS CI",
+      "exercice": 2021,
+      "montant_net_fcfa": 69.47,
+      "date_paiement": "2022-08-02",
+      "date_ex_dividende": "2022-07-29",
+      "source": "brvm.org page 11"
+    },
+    {
+      "ticker": "CABC",
+      "societe": "SICABLE",
+      "exercice": 2021,
+      "montant_net_fcfa": 69.0,
+      "date_paiement": "2022-08-02",
+      "date_ex_dividende": "2022-07-29",
+      "source": "brvm.org page 11"
+    },
+    {
+      "ticker": "PALC",
+      "societe": "PALM CI",
+      "exercice": 2021,
+      "montant_net_fcfa": 1236.34,
+      "date_paiement": "2022-08-31",
+      "date_ex_dividende": "2022-08-29",
+      "source": "brvm.org page 11"
+    },
+    {
+      "ticker": "PRSC",
+      "societe": "TRACTAFRIC CI",
+      "exercice": 2021,
+      "montant_net_fcfa": 175.86,
+      "date_paiement": "2022-08-30",
+      "date_ex_dividende": "2022-08-26",
+      "source": "brvm.org page 11"
+    },
+    {
+      "ticker": "STBC",
+      "societe": "SITAB",
+      "exercice": 2021,
+      "montant_net_fcfa": 445.117,
+      "date_paiement": "2022-07-21",
+      "date_ex_dividende": "2022-07-19",
+      "source": "brvm.org page 11"
+    },
+    {
+      "ticker": "SOGC",
+      "societe": "SOGB",
+      "exercice": 2021,
+      "montant_net_fcfa": 541.8,
+      "date_paiement": "2022-07-21",
+      "date_ex_dividende": "2022-07-19",
+      "source": "brvm.org page 11"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL SENEGAL S.A.",
+      "exercice": 2021,
+      "montant_net_fcfa": 187.3,
+      "date_paiement": "2022-07-22",
+      "date_ex_dividende": "2022-07-20",
+      "source": "brvm.org page 11"
+    },
+    {
+      "ticker": "CIEC",
+      "societe": "CIE CI",
+      "exercice": 2021,
+      "montant_net_fcfa": 153.161,
+      "date_paiement": "2022-07-25",
+      "date_ex_dividende": "2022-07-21",
+      "source": "brvm.org page 12"
+    },
+    {
+      "ticker": "ECOC",
+      "societe": "ECOBANK TG",
+      "exercice": 2021,
+      "montant_net_fcfa": null,
+      "date_paiement": "2022-06-20",
+      "date_ex_dividende": "2022-06-16",
+      "source": "brvm.org page 12"
+    },
+    {
+      "ticker": "SIBC",
+      "societe": "SIB",
+      "exercice": 2021,
+      "montant_net_fcfa": 405.0,
+      "date_paiement": "2022-06-30",
+      "date_ex_dividende": "2022-06-28",
+      "source": "brvm.org page 12"
+    },
+    {
+      "ticker": "SDSC",
+      "societe": "BOLLORE TRANSPORT & LOGISTICS",
+      "exercice": 2021,
+      "montant_net_fcfa": 130.0,
+      "date_paiement": "2022-06-23",
+      "date_ex_dividende": "2022-06-21",
+      "source": "brvm.org page 12"
+    },
+    {
+      "ticker": "SGBC",
+      "societe": "SGB CI",
+      "exercice": 2021,
+      "montant_net_fcfa": 1004.93,
+      "date_paiement": "2022-06-10",
+      "date_ex_dividende": "2022-06-08",
+      "source": "brvm.org page 12"
+    },
+    {
+      "ticker": "SNTS",
+      "societe": "SONATEL",
+      "exercice": 2021,
+      "montant_net_fcfa": 1400.0,
+      "date_paiement": "2022-05-18",
+      "date_ex_dividende": "2022-05-16",
+      "source": "brvm.org page 12"
+    },
+    {
+      "ticker": "BOAS",
+      "societe": "BANK OF AFRICA SN",
+      "exercice": 2021,
+      "montant_net_fcfa": null,
+      "date_paiement": "2022-06-01",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 13"
+    },
+    {
+      "ticker": "BOABF",
+      "societe": "BANK OF AFRICA BF",
+      "exercice": 2021,
+      "montant_net_fcfa": null,
+      "date_paiement": "2022-05-04",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 13"
+    },
+    {
+      "ticker": "ECOC",
+      "societe": "ECOBANK CI",
+      "exercice": 2021,
+      "montant_net_fcfa": null,
+      "date_paiement": "2022-04-29",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 13"
+    },
+    {
+      "ticker": "BOAC",
+      "societe": "BANK OF AFRICA CI",
+      "exercice": 2021,
+      "montant_net_fcfa": null,
+      "date_paiement": "2022-04-28",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 13"
+    },
+    {
+      "ticker": "BOAN",
+      "societe": "BANK OF AFRICA NG",
+      "exercice": 2021,
+      "montant_net_fcfa": null,
+      "date_paiement": "2022-05-12",
+      "date_ex_dividende": "2022-05-10",
+      "source": "brvm.org page 13"
+    },
+    {
+      "ticker": "PRSC",
+      "societe": "TRACTAFRIC CI",
+      "exercice": 2020,
+      "montant_net_fcfa": null,
+      "date_paiement": "2021-09-02",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 13"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL",
+      "exercice": 2020,
+      "montant_net_fcfa": null,
+      "date_paiement": "2021-09-27",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 13"
+    },
+    {
+      "ticker": "PALC",
+      "societe": "PALM CI",
+      "exercice": 2020,
+      "montant_net_fcfa": null,
+      "date_paiement": "2021-08-27",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 13"
+    },
+    {
+      "ticker": "SPHC",
+      "societe": "SAPH CI",
+      "exercice": 2020,
+      "montant_net_fcfa": 132.3,
+      "date_paiement": "2021-08-24",
+      "date_ex_dividende": "2021-08-20",
+      "source": "brvm.org page 14"
+    },
+    {
+      "ticker": "SDSC",
+      "societe": "BOLLORE TRANSPORT & LOGISTICS",
+      "exercice": 2020,
+      "montant_net_fcfa": 100.0,
+      "date_paiement": "2021-08-11",
+      "date_ex_dividende": "2021-08-09",
+      "source": "brvm.org page 14"
+    },
+    {
+      "ticker": "CABC",
+      "societe": "SICABLE",
+      "exercice": 2020,
+      "montant_net_fcfa": 133.0,
+      "date_paiement": "2021-08-02",
+      "date_ex_dividende": "2021-07-29",
+      "source": "brvm.org page 14"
+    },
+    {
+      "ticker": "SLBC",
+      "societe": "SOLIBRA",
+      "exercice": 2020,
+      "montant_net_fcfa": 2736.0,
+      "date_paiement": "2021-08-03",
+      "date_ex_dividende": "2021-07-30",
+      "source": "brvm.org page 14"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL SENEGAL S.A.",
+      "exercice": 2020,
+      "montant_net_fcfa": 223.6,
+      "date_paiement": "2021-07-30",
+      "date_ex_dividende": "2021-07-28",
+      "source": "brvm.org page 14"
+    },
+    {
+      "ticker": "SDCC",
+      "societe": "SODECI",
+      "exercice": 2020,
+      "montant_net_fcfa": 337.5,
+      "date_paiement": "2021-07-27",
+      "date_ex_dividende": "2021-07-23",
+      "source": "brvm.org page 14"
+    },
+    {
+      "ticker": "NTLC",
+      "societe": "NESTLE CI",
+      "exercice": 2020,
+      "montant_net_fcfa": 363.665,
+      "date_paiement": "2021-07-30",
+      "date_ex_dividende": "2021-07-28",
+      "source": "brvm.org page 14"
+    },
+    {
+      "ticker": "SIBC",
+      "societe": "SIB",
+      "exercice": 2020,
+      "montant_net_fcfa": 360.0,
+      "date_paiement": "2021-07-23",
+      "date_ex_dividende": "2021-07-21",
+      "source": "brvm.org page 14"
+    },
+    {
+      "ticker": "CFAC",
+      "societe": "CFAO MOTORS CI",
+      "exercice": 2020,
+      "montant_net_fcfa": 22.15,
+      "date_paiement": "2021-07-15",
+      "date_ex_dividende": "2021-07-13",
+      "source": "brvm.org page 15"
+    },
+    {
+      "ticker": "SMBC",
+      "societe": "SMB",
+      "exercice": 2020,
+      "montant_net_fcfa": 810.0,
+      "date_paiement": "2021-07-15",
+      "date_ex_dividende": "2021-07-13",
+      "source": "brvm.org page 15"
+    },
+    {
+      "ticker": "CIEC",
+      "societe": "CIE CI",
+      "exercice": 2020,
+      "montant_net_fcfa": 167.14,
+      "date_paiement": "2021-07-14",
+      "date_ex_dividende": "2021-07-12",
+      "source": "brvm.org page 15"
+    },
+    {
+      "ticker": "FTSC",
+      "societe": "FILTISAC CI",
+      "exercice": 2020,
+      "montant_net_fcfa": 235.0,
+      "date_paiement": "2021-07-30",
+      "date_ex_dividende": "2021-07-28",
+      "source": "brvm.org page 15"
+    },
+    {
+      "ticker": "SOGC",
+      "societe": "SOGB",
+      "exercice": 2020,
+      "montant_net_fcfa": 250.0,
+      "date_paiement": "2021-07-15",
+      "date_ex_dividende": "2021-07-13",
+      "source": "brvm.org page 15"
+    },
+    {
+      "ticker": "SGBC",
+      "societe": "SGB CI",
+      "exercice": 2020,
+      "montant_net_fcfa": 368.298,
+      "date_paiement": "2021-06-30",
+      "date_ex_dividende": "2021-06-28",
+      "source": "brvm.org page 15"
+    },
+    {
+      "ticker": "SNTS",
+      "societe": "SONATEL",
+      "exercice": 2020,
+      "montant_net_fcfa": 1225.0,
+      "date_paiement": "2021-05-17",
+      "date_ex_dividende": "2021-05-12",
+      "source": "brvm.org page 16"
+    },
+    {
+      "ticker": "BOAS",
+      "societe": "BANK OF AFRICA SN",
+      "exercice": 2020,
+      "montant_net_fcfa": 161.01,
+      "date_paiement": "2021-06-01",
+      "date_ex_dividende": "2021-05-28",
+      "source": "brvm.org page 16"
+    },
+    {
+      "ticker": "BOAC",
+      "societe": "BANK OF AFRICA CI",
+      "exercice": 2020,
+      "montant_net_fcfa": 315.0,
+      "date_paiement": "2021-05-12",
+      "date_ex_dividende": "2021-05-10",
+      "source": "brvm.org page 16"
+    },
+    {
+      "ticker": "ECOC",
+      "societe": "ECOBANK CI",
+      "exercice": 2020,
+      "montant_net_fcfa": 294.3,
+      "date_paiement": "2021-05-06",
+      "date_ex_dividende": "2021-05-04",
+      "source": "brvm.org page 16"
+    },
+    {
+      "ticker": "BOAN",
+      "societe": "BANK OF AFRICA NG",
+      "exercice": 2020,
+      "montant_net_fcfa": 429.66,
+      "date_paiement": "2021-05-06",
+      "date_ex_dividende": "2021-05-04",
+      "source": "brvm.org page 16"
+    },
+    {
+      "ticker": "BOABF",
+      "societe": "BANK OF AFRICA BF",
+      "exercice": 2020,
+      "montant_net_fcfa": 370.0,
+      "date_paiement": "2021-05-03",
+      "date_ex_dividende": "2021-04-29",
+      "source": "brvm.org page 16"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL SENEGAL S.A.",
+      "exercice": 2019,
+      "montant_net_fcfa": 105.3,
+      "date_paiement": "2020-12-22",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 16"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL SENEGAL S.A.",
+      "exercice": 2019,
+      "montant_net_fcfa": 105.3,
+      "date_paiement": "2020-12-22",
+      "date_ex_dividende": "2020-12-18",
+      "source": "brvm.org page 16"
+    },
+    {
+      "ticker": "SDSC",
+      "societe": "BOLLORE TRANSPORT & LOGISTICS",
+      "exercice": 2019,
+      "montant_net_fcfa": 100.0,
+      "date_paiement": "2020-12-18",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 16"
+    },
+    {
+      "ticker": "SDSC",
+      "societe": "BOLLORE TRANSPORT & LOGISTICS",
+      "exercice": 2019,
+      "montant_net_fcfa": 100.0,
+      "date_paiement": "2020-12-18",
+      "date_ex_dividende": "2020-12-16",
+      "source": "brvm.org page 17"
+    },
+    {
+      "ticker": "SHEC",
+      "societe": "VIVO ENERGY CI",
+      "exercice": 2019,
+      "montant_net_fcfa": 63.9,
+      "date_paiement": "2020-11-26",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 17"
+    },
+    {
+      "ticker": "SHEC",
+      "societe": "VIVO ENERGY CI",
+      "exercice": 2019,
+      "montant_net_fcfa": 63.9,
+      "date_paiement": "2020-11-26",
+      "date_ex_dividende": "2020-11-24",
+      "source": "brvm.org page 17"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL",
+      "exercice": 2019,
+      "montant_net_fcfa": null,
+      "date_paiement": "2020-09-25",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 17"
+    },
+    {
+      "ticker": "SDCC",
+      "societe": "SODECI",
+      "exercice": 2019,
+      "montant_net_fcfa": 292.5,
+      "date_paiement": "2020-09-25",
+      "date_ex_dividende": "2020-09-23",
+      "source": "brvm.org page 17"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL",
+      "exercice": 2019,
+      "montant_net_fcfa": null,
+      "date_paiement": "2020-09-25",
+      "date_ex_dividende": "2020-09-23",
+      "source": "brvm.org page 17"
+    },
+    {
+      "ticker": "PRSC",
+      "societe": "TRACTAFRIC CI",
+      "exercice": 2019,
+      "montant_net_fcfa": 159.3,
+      "date_paiement": "2020-09-01",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 17"
+    },
+    {
+      "ticker": "CFAC",
+      "societe": "CFAO MOTORS CI",
+      "exercice": 2019,
+      "montant_net_fcfa": 26.073,
+      "date_paiement": "2020-08-25",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 17"
+    },
+    {
+      "ticker": "PRSC",
+      "societe": "TRACTAFRIC CI",
+      "exercice": 2019,
+      "montant_net_fcfa": 159.3,
+      "date_paiement": "2020-09-01",
+      "date_ex_dividende": "2020-08-28",
+      "source": "brvm.org page 17"
+    },
+    {
+      "ticker": "CFAC",
+      "societe": "CFAO MOTORS CI",
+      "exercice": 2019,
+      "montant_net_fcfa": 26.073,
+      "date_paiement": "2020-08-25",
+      "date_ex_dividende": "2020-08-21",
+      "source": "brvm.org page 17"
+    },
+    {
+      "ticker": "FTSC",
+      "societe": "FILTISAC CI",
+      "exercice": 2019,
+      "montant_net_fcfa": 125.0,
+      "date_paiement": "2020-08-06",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 18"
+    },
+    {
+      "ticker": "FTSC",
+      "societe": "FILTISAC CI",
+      "exercice": 2019,
+      "montant_net_fcfa": 125.0,
+      "date_paiement": "2020-08-06",
+      "date_ex_dividende": "2020-07-04",
+      "source": "brvm.org page 18"
+    },
+    {
+      "ticker": "ECOC",
+      "societe": "ECOBANK CI",
+      "exercice": 2019,
+      "montant_net_fcfa": 352.8,
+      "date_paiement": "2020-07-20",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 18"
+    },
+    {
+      "ticker": "CABC",
+      "societe": "SICABLE",
+      "exercice": 2019,
+      "montant_net_fcfa": 75.0,
+      "date_paiement": "2020-07-29",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 18"
+    },
+    {
+      "ticker": "CIEC",
+      "societe": "CIE CI",
+      "exercice": 2019,
+      "montant_net_fcfa": 104.979,
+      "date_paiement": "2020-08-05",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 18"
+    },
+    {
+      "ticker": "SGBC",
+      "societe": "SGB CI",
+      "exercice": 2019,
+      "montant_net_fcfa": 273.0,
+      "date_paiement": "2020-07-29",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 18"
+    },
+    {
+      "ticker": "ECOC",
+      "societe": "ECOBANK CI",
+      "exercice": 2019,
+      "montant_net_fcfa": 352.8,
+      "date_paiement": "2020-07-20",
+      "date_ex_dividende": "2020-07-16",
+      "source": "brvm.org page 18"
+    },
+    {
+      "ticker": "CIEC",
+      "societe": "CIE CI",
+      "exercice": 2019,
+      "montant_net_fcfa": 104.979,
+      "date_paiement": "2020-08-05",
+      "date_ex_dividende": "2020-08-03",
+      "source": "brvm.org page 18"
+    },
+    {
+      "ticker": "CABC",
+      "societe": "SICABLE",
+      "exercice": 2019,
+      "montant_net_fcfa": 75.0,
+      "date_paiement": "2020-07-29",
+      "date_ex_dividende": "2020-07-27",
+      "source": "brvm.org page 18"
+    },
+    {
+      "ticker": "SGBC",
+      "societe": "SGB CI",
+      "exercice": 2019,
+      "montant_net_fcfa": 273.0,
+      "date_paiement": "2020-07-29",
+      "date_ex_dividende": "2020-07-27",
+      "source": "brvm.org page 19"
+    },
+    {
+      "ticker": "SGBC",
+      "societe": "SGB CI",
+      "exercice": 2019,
+      "montant_net_fcfa": 273.0,
+      "date_paiement": "2020-07-31",
+      "date_ex_dividende": "2020-07-29",
+      "source": "brvm.org page 19"
+    },
+    {
+      "ticker": "SOGC",
+      "societe": "SOGB",
+      "exercice": 2019,
+      "montant_net_fcfa": 126.0,
+      "date_paiement": "2020-07-15",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 19"
+    },
+    {
+      "ticker": "SOGC",
+      "societe": "SOGB",
+      "exercice": 2019,
+      "montant_net_fcfa": 126.0,
+      "date_paiement": "2020-07-15",
+      "date_ex_dividende": "2020-07-13",
+      "source": "brvm.org page 19"
+    },
+    {
+      "ticker": "SIBC",
+      "societe": "SIB",
+      "exercice": 2019,
+      "montant_net_fcfa": 270.0,
+      "date_paiement": "2020-06-19",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 19"
+    },
+    {
+      "ticker": "SIBC",
+      "societe": "SIB",
+      "exercice": 2019,
+      "montant_net_fcfa": 270.0,
+      "date_paiement": "2020-06-19",
+      "date_ex_dividende": "2020-06-17",
+      "source": "brvm.org page 19"
+    },
+    {
+      "ticker": "BOAS",
+      "societe": "BANK OF AFRICA SN",
+      "exercice": 2019,
+      "montant_net_fcfa": 161.0,
+      "date_paiement": "2020-06-19",
+      "date_ex_dividende": "2020-06-17",
+      "source": "brvm.org page 20"
+    },
+    {
+      "ticker": "BOAC",
+      "societe": "BANK OF AFRICA CI",
+      "exercice": 2019,
+      "montant_net_fcfa": 315.0,
+      "date_paiement": "2020-06-15",
+      "date_ex_dividende": "2020-06-11",
+      "source": "brvm.org page 20"
+    },
+    {
+      "ticker": "SNTS",
+      "societe": "SONATEL",
+      "exercice": 2019,
+      "montant_net_fcfa": 1225.0,
+      "date_paiement": "2020-05-20",
+      "date_ex_dividende": "2020-05-18",
+      "source": "brvm.org page 20"
+    },
+    {
+      "ticker": "BOAN",
+      "societe": "BANK OF AFRICA NG",
+      "exercice": 2019,
+      "montant_net_fcfa": 429.66,
+      "date_paiement": "2020-05-20",
+      "date_ex_dividende": "2020-05-18",
+      "source": "brvm.org page 20"
+    },
+    {
+      "ticker": "BOABF",
+      "societe": "BANK OF AFRICA BF",
+      "exercice": 2019,
+      "montant_net_fcfa": 370.0,
+      "date_paiement": "2020-05-04",
+      "date_ex_dividende": "2020-04-29",
+      "source": "brvm.org page 20"
+    },
+    {
+      "ticker": "SDCC",
+      "societe": "SODECI",
+      "exercice": 2018,
+      "montant_net_fcfa": 270.0,
+      "date_paiement": "2019-10-29",
+      "date_ex_dividende": "2019-10-25",
+      "source": "brvm.org page 20"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL",
+      "exercice": 2018,
+      "montant_net_fcfa": 108.4,
+      "date_paiement": "2019-10-11",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 21"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL",
+      "exercice": 2018,
+      "montant_net_fcfa": 108.4,
+      "date_paiement": "2019-10-11",
+      "date_ex_dividende": "2019-10-09",
+      "source": "brvm.org page 21"
+    },
+    {
+      "ticker": "SRVC",
+      "societe": "SERVAIR ABIDJAN CI",
+      "exercice": 2018,
+      "montant_net_fcfa": 41.239003,
+      "date_paiement": "2019-09-30",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 21"
+    },
+    {
+      "ticker": "SRVC",
+      "societe": "SERVAIR ABIDJAN CI",
+      "exercice": 2018,
+      "montant_net_fcfa": 41.239003,
+      "date_paiement": "2019-09-30",
+      "date_ex_dividende": "2019-09-26",
+      "source": "brvm.org page 21"
+    },
+    {
+      "ticker": "PRSC",
+      "societe": "TRACTAFRIC CI",
+      "exercice": 2018,
+      "montant_net_fcfa": 9623.0,
+      "date_paiement": "2019-09-18",
+      "date_ex_dividende": "2019-09-16",
+      "source": "brvm.org page 21"
+    },
+    {
+      "ticker": "SMBC",
+      "societe": "SMB",
+      "exercice": 2018,
+      "montant_net_fcfa": 450.0,
+      "date_paiement": "2019-08-30",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 21"
+    },
+    {
+      "ticker": "SMBC",
+      "societe": "SMB",
+      "exercice": 2018,
+      "montant_net_fcfa": 450.0,
+      "date_paiement": "2019-08-29",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 21"
+    },
+    {
+      "ticker": "SMBC",
+      "societe": "SMB",
+      "exercice": 2018,
+      "montant_net_fcfa": 450.0,
+      "date_paiement": "2019-08-30",
+      "date_ex_dividende": "2019-08-28",
+      "source": "brvm.org page 21"
+    },
+    {
+      "ticker": "CIEC",
+      "societe": "CIE CI",
+      "exercice": 2018,
+      "montant_net_fcfa": 79.23,
+      "date_paiement": "2019-08-09",
+      "date_ex_dividende": "2019-08-06",
+      "source": "brvm.org page 21"
+    },
+    {
+      "ticker": "SHEC",
+      "societe": "VIVO ENERGY CI",
+      "exercice": 2018,
+      "montant_net_fcfa": 64.286,
+      "date_paiement": "2019-08-02",
+      "date_ex_dividende": "2019-07-31",
+      "source": "brvm.org page 21"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL SENEGAL S.A.",
+      "exercice": 2018,
+      "montant_net_fcfa": 105.3,
+      "date_paiement": "2019-07-29",
+      "date_ex_dividende": "2019-07-25",
+      "source": "brvm.org page 22"
+    },
+    {
+      "ticker": "SGBC",
+      "societe": "SGB CI",
+      "exercice": 2018,
+      "montant_net_fcfa": 206.0,
+      "date_paiement": "2019-07-31",
+      "date_ex_dividende": "2019-07-29",
+      "source": "brvm.org page 22"
+    },
+    {
+      "ticker": "CFAC",
+      "societe": "CFAO MOTORS CI",
+      "exercice": 2018,
+      "montant_net_fcfa": 31.5,
+      "date_paiement": "2019-07-23",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 22"
+    },
+    {
+      "ticker": "CFAC",
+      "societe": "CFAO MOTORS CI",
+      "exercice": 2018,
+      "montant_net_fcfa": 31.5,
+      "date_paiement": "2019-07-23",
+      "date_ex_dividende": "2019-07-19",
+      "source": "brvm.org page 22"
+    },
+    {
+      "ticker": "FTSC",
+      "societe": "FILTISAC CI",
+      "exercice": 2018,
+      "montant_net_fcfa": 110.0,
+      "date_paiement": "2019-07-31",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 22"
+    },
+    {
+      "ticker": "SOGC",
+      "societe": "SOGB",
+      "exercice": 2018,
+      "montant_net_fcfa": 129.0,
+      "date_paiement": "2019-07-16",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 22"
+    },
+    {
+      "ticker": "FTSC",
+      "societe": "FILTISAC CI",
+      "exercice": 2018,
+      "montant_net_fcfa": 110.0,
+      "date_paiement": "2019-07-31",
+      "date_ex_dividende": "2019-07-29",
+      "source": "brvm.org page 23"
+    },
+    {
+      "ticker": "SOGC",
+      "societe": "SOGB",
+      "exercice": 2018,
+      "montant_net_fcfa": 126.0,
+      "date_paiement": "2019-07-15",
+      "date_ex_dividende": "2019-07-11",
+      "source": "brvm.org page 23"
+    },
+    {
+      "ticker": "SIBC",
+      "societe": "SIB",
+      "exercice": 2018,
+      "montant_net_fcfa": 252.0,
+      "date_paiement": "2019-07-05",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 23"
+    },
+    {
+      "ticker": "SIBC",
+      "societe": "SIB",
+      "exercice": 2018,
+      "montant_net_fcfa": 252.0,
+      "date_paiement": "2019-07-05",
+      "date_ex_dividende": "2019-07-03",
+      "source": "brvm.org page 23"
+    },
+    {
+      "ticker": "SLBC",
+      "societe": "SOLIBRA",
+      "exercice": 2018,
+      "montant_net_fcfa": 1368.0,
+      "date_paiement": "2019-06-06",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 24"
+    },
+    {
+      "ticker": "CABC",
+      "societe": "SICABLE",
+      "exercice": 2018,
+      "montant_net_fcfa": 75.0,
+      "date_paiement": "2019-06-03",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 24"
+    },
+    {
+      "ticker": "CABC",
+      "societe": "SICABLE",
+      "exercice": 2018,
+      "montant_net_fcfa": 75.0,
+      "date_paiement": "2019-06-03",
+      "date_ex_dividende": "2019-05-29",
+      "source": "brvm.org page 24"
+    },
+    {
+      "ticker": "SRVC",
+      "societe": "SERVAIR ABIDJAN CI",
+      "exercice": 2018,
+      "montant_net_fcfa": 123.717,
+      "date_paiement": "2019-05-27",
+      "date_ex_dividende": "2019-05-23",
+      "source": "brvm.org page 24"
+    },
+    {
+      "ticker": "SLBC",
+      "societe": "SOLIBRA",
+      "exercice": 2018,
+      "montant_net_fcfa": 1368.0,
+      "date_paiement": "2019-06-06",
+      "date_ex_dividende": "2019-06-03",
+      "source": "brvm.org page 24"
+    },
+    {
+      "ticker": "SDSC",
+      "societe": "BOLLORE TRANSPORT & LOGISTICS",
+      "exercice": 2018,
+      "montant_net_fcfa": 184.0,
+      "date_paiement": "2019-06-06",
+      "date_ex_dividende": "2019-06-03",
+      "source": "brvm.org page 24"
+    },
+    {
+      "ticker": "SNTS",
+      "societe": "SONATEL",
+      "exercice": 2018,
+      "montant_net_fcfa": 1500.0,
+      "date_paiement": "2019-05-14",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 25"
+    },
+    {
+      "ticker": "ECOC",
+      "societe": "ECOBANK CI",
+      "exercice": 2018,
+      "montant_net_fcfa": 214.0,
+      "date_paiement": "2019-05-15",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 25"
+    },
+    {
+      "ticker": "BOAS",
+      "societe": "BANK OF AFRICA SN",
+      "exercice": 2018,
+      "montant_net_fcfa": 160.0,
+      "date_paiement": "2019-06-03",
+      "date_ex_dividende": "2019-05-30",
+      "source": "brvm.org page 25"
+    },
+    {
+      "ticker": "BOAC",
+      "societe": "BANK OF AFRICA CI",
+      "exercice": 2018,
+      "montant_net_fcfa": 306.0,
+      "date_paiement": "2019-05-20",
+      "date_ex_dividende": "2019-05-16",
+      "source": "brvm.org page 25"
+    },
+    {
+      "ticker": "BOAM",
+      "societe": "BANK OF AFRICA ML",
+      "exercice": 2018,
+      "montant_net_fcfa": 271.0,
+      "date_paiement": "2019-05-15",
+      "date_ex_dividende": "2019-05-13",
+      "source": "brvm.org page 25"
+    },
+    {
+      "ticker": "ECOC",
+      "societe": "ECOBANK CI",
+      "exercice": 2018,
+      "montant_net_fcfa": 241.0,
+      "date_paiement": "2019-05-15",
+      "date_ex_dividende": "2019-05-13",
+      "source": "brvm.org page 25"
+    },
+    {
+      "ticker": "BOAS",
+      "societe": "BANK OF AFRICA SN",
+      "exercice": 2018,
+      "montant_net_fcfa": null,
+      "date_paiement": "2019-06-03",
+      "date_ex_dividende": "2019-05-29",
+      "source": "brvm.org page 26"
+    },
+    {
+      "ticker": "BOAM",
+      "societe": "BANK OF AFRICA ML",
+      "exercice": null,
+      "montant_net_fcfa": null,
+      "date_paiement": "2019-05-15",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 26"
+    },
+    {
+      "ticker": "BOAC",
+      "societe": "BANK OF AFRICA CI",
+      "exercice": 2018,
+      "montant_net_fcfa": null,
+      "date_paiement": "2019-05-20",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 26"
+    },
+    {
+      "ticker": "BOAN",
+      "societe": "BANK OF AFRICA NG",
+      "exercice": 2018,
+      "montant_net_fcfa": null,
+      "date_paiement": "2019-05-27",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 26"
+    },
+    {
+      "ticker": "BOABF",
+      "societe": "BANK OF AFRICA BF",
+      "exercice": 2018,
+      "montant_net_fcfa": null,
+      "date_paiement": "2019-05-02",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 26"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL",
+      "exercice": 2017,
+      "montant_net_fcfa": null,
+      "date_paiement": "2018-09-28",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 26"
+    },
+    {
+      "ticker": "SPHC",
+      "societe": "SAPH CI",
+      "exercice": 2017,
+      "montant_net_fcfa": null,
+      "date_paiement": "2018-09-27",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 26"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL",
+      "exercice": 2017,
+      "montant_net_fcfa": 103.45,
+      "date_paiement": "2018-09-28",
+      "date_ex_dividende": "2018-09-26",
+      "source": "brvm.org page 27"
+    },
+    {
+      "ticker": "SPHC",
+      "societe": "SAPH CI",
+      "exercice": 2017,
+      "montant_net_fcfa": 78.0,
+      "date_paiement": "2018-09-27",
+      "date_ex_dividende": "2018-09-25",
+      "source": "brvm.org page 27"
+    },
+    {
+      "ticker": "PALC",
+      "societe": "PALM CI",
+      "exercice": 2017,
+      "montant_net_fcfa": 253.47,
+      "date_paiement": "2018-09-24",
+      "date_ex_dividende": "2018-09-20",
+      "source": "brvm.org page 27"
+    },
+    {
+      "ticker": "SDCC",
+      "societe": "SODECI",
+      "exercice": 2017,
+      "montant_net_fcfa": 253.47,
+      "date_paiement": "2018-09-24",
+      "date_ex_dividende": "2018-09-20",
+      "source": "brvm.org page 27"
+    },
+    {
+      "ticker": "PRSC",
+      "societe": "TRACTAFRIC CI",
+      "exercice": 2017,
+      "montant_net_fcfa": null,
+      "date_paiement": "2018-08-31",
+      "date_ex_dividende": "2018-08-29",
+      "source": "brvm.org page 27"
+    },
+    {
+      "ticker": "SDCC",
+      "societe": "SODECI",
+      "exercice": 2017,
+      "montant_net_fcfa": null,
+      "date_paiement": "2018-08-29",
+      "date_ex_dividende": "2018-08-27",
+      "source": "brvm.org page 27"
+    },
+    {
+      "ticker": "SMBC",
+      "societe": "SMB",
+      "exercice": 2017,
+      "montant_net_fcfa": null,
+      "date_paiement": "2018-08-29",
+      "date_ex_dividende": "2018-08-27",
+      "source": "brvm.org page 27"
+    },
+    {
+      "ticker": "FTSC",
+      "societe": "FILTISAC CI",
+      "exercice": 2017,
+      "montant_net_fcfa": 161.27,
+      "date_paiement": "2018-08-16",
+      "date_ex_dividende": "2018-08-13",
+      "source": "brvm.org page 27"
+    },
+    {
+      "ticker": "CFAC",
+      "societe": "CFAO MOTORS CI",
+      "exercice": 2017,
+      "montant_net_fcfa": 9.9,
+      "date_paiement": "2018-07-27",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 28"
+    },
+    {
+      "ticker": "SHEC",
+      "societe": "VIVO ENERGY CI",
+      "exercice": 2017,
+      "montant_net_fcfa": 42.86,
+      "date_paiement": "2018-07-23",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 28"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL SENEGAL S.A.",
+      "exercice": 2017,
+      "montant_net_fcfa": 56.25,
+      "date_paiement": "2018-07-27",
+      "date_ex_dividende": "2018-07-25",
+      "source": "brvm.org page 28"
+    },
+    {
+      "ticker": "CFAC",
+      "societe": "CFAO MOTORS CI",
+      "exercice": 2017,
+      "montant_net_fcfa": 9.9,
+      "date_paiement": "2018-07-27",
+      "date_ex_dividende": "2018-07-25",
+      "source": "brvm.org page 28"
+    },
+    {
+      "ticker": "CIEC",
+      "societe": "CIE CI",
+      "exercice": 2017,
+      "montant_net_fcfa": 31.95,
+      "date_paiement": "2018-07-20",
+      "date_ex_dividende": "2018-07-17",
+      "source": "brvm.org page 28"
+    },
+    {
+      "ticker": "SGBC",
+      "societe": "SGB CI",
+      "exercice": 2017,
+      "montant_net_fcfa": 585.0,
+      "date_paiement": "2018-07-17",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 28"
+    },
+    {
+      "ticker": "CIEC",
+      "societe": "CIE CI",
+      "exercice": 2017,
+      "montant_net_fcfa": 31.95,
+      "date_paiement": "2018-07-20",
+      "date_ex_dividende": "2018-07-18",
+      "source": "brvm.org page 28"
+    },
+    {
+      "ticker": "SHEC",
+      "societe": "VIVO ENERGY CI",
+      "exercice": 2017,
+      "montant_net_fcfa": 42.86,
+      "date_paiement": "2018-07-23",
+      "date_ex_dividende": "2018-07-19",
+      "source": "brvm.org page 29"
+    },
+    {
+      "ticker": "SOGC",
+      "societe": "SOGB",
+      "exercice": 2018,
+      "montant_net_fcfa": 432.0,
+      "date_paiement": "2018-07-23",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 29"
+    },
+    {
+      "ticker": "SGBC",
+      "societe": "SGB CI",
+      "exercice": 2017,
+      "montant_net_fcfa": 585.0,
+      "date_paiement": "2018-07-17",
+      "date_ex_dividende": "2018-07-13",
+      "source": "brvm.org page 29"
+    },
+    {
+      "ticker": "SOGC",
+      "societe": "SOGB",
+      "exercice": 2017,
+      "montant_net_fcfa": 432.0,
+      "date_paiement": "2018-07-23",
+      "date_ex_dividende": "2018-07-19",
+      "source": "brvm.org page 29"
+    },
+    {
+      "ticker": "ECOC",
+      "societe": "ECOBANK CI",
+      "exercice": 2017,
+      "montant_net_fcfa": 1844.0,
+      "date_paiement": "2018-06-22",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 29"
+    },
+    {
+      "ticker": "SRVC",
+      "societe": "SERVAIR ABIDJAN CI",
+      "exercice": 2017,
+      "montant_net_fcfa": 98.97,
+      "date_paiement": "2018-06-20",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 30"
+    },
+    {
+      "ticker": "BOAC",
+      "societe": "BANK OF AFRICA CI",
+      "exercice": 2017,
+      "montant_net_fcfa": 295.0,
+      "date_paiement": "2018-06-06",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 30"
+    },
+    {
+      "ticker": "SRVC",
+      "societe": "SERVAIR ABIDJAN CI",
+      "exercice": 2017,
+      "montant_net_fcfa": 98.97,
+      "date_paiement": "2018-06-20",
+      "date_ex_dividende": "2018-06-18",
+      "source": "brvm.org page 30"
+    },
+    {
+      "ticker": "ECOC",
+      "societe": "ECOBANK CI",
+      "exercice": 2017,
+      "montant_net_fcfa": 1844.0,
+      "date_paiement": "2018-06-22",
+      "date_ex_dividende": "2018-06-20",
+      "source": "brvm.org page 30"
+    },
+    {
+      "ticker": "SIBC",
+      "societe": "SIB",
+      "exercice": 2017,
+      "montant_net_fcfa": 945.0,
+      "date_paiement": "2018-06-08",
+      "date_ex_dividende": "2018-06-06",
+      "source": "brvm.org page 30"
+    },
+    {
+      "ticker": "SLBC",
+      "societe": "SOLIBRA",
+      "exercice": 2017,
+      "montant_net_fcfa": 2322.0,
+      "date_paiement": "2018-06-14",
+      "date_ex_dividende": "2018-06-14",
+      "source": "brvm.org page 30"
+    },
+    {
+      "ticker": "BOAN",
+      "societe": "BANK OF AFRICA NG",
+      "exercice": 2017,
+      "montant_net_fcfa": 379.44,
+      "date_paiement": "2018-05-31",
+      "date_ex_dividende": "2018-05-29",
+      "source": "brvm.org page 31"
+    },
+    {
+      "ticker": "BOAM",
+      "societe": "BANK OF AFRICA ML",
+      "exercice": 2017,
+      "montant_net_fcfa": 290.0,
+      "date_paiement": "2018-05-31",
+      "date_ex_dividende": "2018-05-29",
+      "source": "brvm.org page 31"
+    },
+    {
+      "ticker": "CABC",
+      "societe": "SICABLE",
+      "exercice": 2017,
+      "montant_net_fcfa": 100.0,
+      "date_paiement": "2018-05-31",
+      "date_ex_dividende": "2018-05-29",
+      "source": "brvm.org page 31"
+    },
+    {
+      "ticker": "BOAC",
+      "societe": "BANK OF AFRICA CI",
+      "exercice": 2017,
+      "montant_net_fcfa": 295.0,
+      "date_paiement": "2018-06-06",
+      "date_ex_dividende": "2018-06-04",
+      "source": "brvm.org page 31"
+    },
+    {
+      "ticker": "BOABF",
+      "societe": "BANK OF AFRICA BF",
+      "exercice": null,
+      "montant_net_fcfa": 358.0,
+      "date_paiement": "2018-05-07",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 31"
+    },
+    {
+      "ticker": "BOAS",
+      "societe": "BANK OF AFRICA SN",
+      "exercice": 2017,
+      "montant_net_fcfa": 160.0,
+      "date_paiement": "2018-05-02",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 31"
+    },
+    {
+      "ticker": "BOABF",
+      "societe": "BANK OF AFRICA BF",
+      "exercice": 2017,
+      "montant_net_fcfa": 358.0,
+      "date_paiement": "2018-05-07",
+      "date_ex_dividende": "2018-05-03",
+      "source": "brvm.org page 31"
+    },
+    {
+      "ticker": "BOAS",
+      "societe": "BANK OF AFRICA SN",
+      "exercice": 2017,
+      "montant_net_fcfa": 160.0,
+      "date_paiement": "2018-05-02",
+      "date_ex_dividende": "2018-04-27",
+      "source": "brvm.org page 31"
+    },
+    {
+      "ticker": "FTSC",
+      "societe": "FILTISAC CI",
+      "exercice": 2016,
+      "montant_net_fcfa": 1200.0,
+      "date_paiement": "2018-01-09",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 32"
+    },
+    {
+      "ticker": "FTSC",
+      "societe": "FILTISAC CI",
+      "exercice": 2016,
+      "montant_net_fcfa": 1200.0,
+      "date_paiement": "2018-01-09",
+      "date_ex_dividende": "2018-01-05",
+      "source": "brvm.org page 32"
+    },
+    {
+      "ticker": "PALC",
+      "societe": "PALM CI",
+      "exercice": 2016,
+      "montant_net_fcfa": 240.6,
+      "date_paiement": "2017-09-29",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 32"
+    },
+    {
+      "ticker": "SDCC",
+      "societe": "SODECI",
+      "exercice": 2016,
+      "montant_net_fcfa": 2700.0,
+      "date_paiement": "2017-09-28",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 32"
+    },
+    {
+      "ticker": "PALC",
+      "societe": "PALM CI",
+      "exercice": 2016,
+      "montant_net_fcfa": 240.6,
+      "date_paiement": "2017-09-29",
+      "date_ex_dividende": "2017-09-27",
+      "source": "brvm.org page 32"
+    },
+    {
+      "ticker": "SDCC",
+      "societe": "SODECI",
+      "exercice": 2016,
+      "montant_net_fcfa": 2700.0,
+      "date_paiement": "2017-09-28",
+      "date_ex_dividende": "2017-09-26",
+      "source": "brvm.org page 33"
+    },
+    {
+      "ticker": "PRSC",
+      "societe": "TRACTAFRIC CI",
+      "exercice": 2016,
+      "montant_net_fcfa": 13500.0,
+      "date_paiement": "2017-09-25",
+      "date_ex_dividende": "2017-09-21",
+      "source": "brvm.org page 33"
+    },
+    {
+      "ticker": "CIEC",
+      "societe": "CIE CI",
+      "exercice": 2016,
+      "montant_net_fcfa": 3465.0,
+      "date_paiement": "2017-09-20",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 33"
+    },
+    {
+      "ticker": "SRVC",
+      "societe": "SERVAIR ABIDJAN CI",
+      "exercice": 2016,
+      "montant_net_fcfa": 49.5,
+      "date_paiement": "2017-07-24",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 33"
+    },
+    {
+      "ticker": "SHEC",
+      "societe": "VIVO ENERGY CI",
+      "exercice": 2016,
+      "montant_net_fcfa": 33.3,
+      "date_paiement": "2017-07-27",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 33"
+    },
+    {
+      "ticker": "SHEC",
+      "societe": "VIVO ENERGY CI",
+      "exercice": 2016,
+      "montant_net_fcfa": 33.3,
+      "date_paiement": "2017-07-25",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 33"
+    },
+    {
+      "ticker": "FTSC",
+      "societe": "FILTISAC CI",
+      "exercice": 2016,
+      "montant_net_fcfa": 1045.0,
+      "date_paiement": "2017-07-31",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 33"
+    },
+    {
+      "ticker": "SOGC",
+      "societe": "SOGB",
+      "exercice": 2016,
+      "montant_net_fcfa": 3204.0,
+      "date_paiement": "2017-07-31",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 33"
+    },
+    {
+      "ticker": "CFAC",
+      "societe": "CFAO MOTORS CI",
+      "exercice": 2016,
+      "montant_net_fcfa": 2032.0,
+      "date_paiement": "2017-07-24",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 33"
+    },
+    {
+      "ticker": "SHEC",
+      "societe": "VIVO ENERGY CI",
+      "exercice": 2016,
+      "montant_net_fcfa": 33.7,
+      "date_paiement": "2017-07-31",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 34"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL SENEGAL S.A.",
+      "exercice": 2016,
+      "montant_net_fcfa": 450.0,
+      "date_paiement": "2017-07-25",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 34"
+    },
+    {
+      "ticker": "SOGC",
+      "societe": "SOGB",
+      "exercice": 2016,
+      "montant_net_fcfa": 3204.0,
+      "date_paiement": "2017-07-31",
+      "date_ex_dividende": "2017-07-27",
+      "source": "brvm.org page 34"
+    },
+    {
+      "ticker": "FTSC",
+      "societe": "FILTISAC CI",
+      "exercice": 2016,
+      "montant_net_fcfa": 1045.0,
+      "date_paiement": "2017-07-31",
+      "date_ex_dividende": "2017-07-27",
+      "source": "brvm.org page 34"
+    },
+    {
+      "ticker": "SHEC",
+      "societe": "VIVO ENERGY CI",
+      "exercice": 2016,
+      "montant_net_fcfa": 33.7,
+      "date_paiement": "2017-07-27",
+      "date_ex_dividende": "2017-07-25",
+      "source": "brvm.org page 34"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL SENEGAL S.A.",
+      "exercice": 2016,
+      "montant_net_fcfa": 450.0,
+      "date_paiement": "2017-07-25",
+      "date_ex_dividende": "2017-07-21",
+      "source": "brvm.org page 34"
+    },
+    {
+      "ticker": "SRVC",
+      "societe": "SERVAIR ABIDJAN CI",
+      "exercice": 2016,
+      "montant_net_fcfa": 49.5,
+      "date_paiement": "2017-07-24",
+      "date_ex_dividende": "2017-07-20",
+      "source": "brvm.org page 34"
+    },
+    {
+      "ticker": "CFAC",
+      "societe": "CFAO MOTORS CI",
+      "exercice": 2016,
+      "montant_net_fcfa": 2032.0,
+      "date_paiement": "2017-07-24",
+      "date_ex_dividende": "2017-07-20",
+      "source": "brvm.org page 34"
+    },
+    {
+      "ticker": "SDSC",
+      "societe": "BOLLORE TRANSPORT & LOGISTICS",
+      "exercice": 2016,
+      "montant_net_fcfa": 8977.0,
+      "date_paiement": "2017-07-13",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 35"
+    },
+    {
+      "ticker": "SDSC",
+      "societe": "BOLLORE TRANSPORT & LOGISTICS",
+      "exercice": 2016,
+      "montant_net_fcfa": 8997.0,
+      "date_paiement": "2017-07-13",
+      "date_ex_dividende": "2017-07-11",
+      "source": "brvm.org page 35"
+    },
+    {
+      "ticker": "CIEC",
+      "societe": "CIE CI",
+      "exercice": 2016,
+      "montant_net_fcfa": 3465.0,
+      "date_paiement": "2017-07-12",
+      "date_ex_dividende": "2017-07-10",
+      "source": "brvm.org page 35"
+    },
+    {
+      "ticker": "SGBC",
+      "societe": "SGB CI",
+      "exercice": 2016,
+      "montant_net_fcfa": 5837.0,
+      "date_paiement": "2017-07-04",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 35"
+    },
+    {
+      "ticker": "SGBC",
+      "societe": "SGB CI",
+      "exercice": 2016,
+      "montant_net_fcfa": 5837.0,
+      "date_paiement": "2017-07-04",
+      "date_ex_dividende": "2017-06-30",
+      "source": "brvm.org page 35"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL",
+      "exercice": 2016,
+      "montant_net_fcfa": 485.0,
+      "date_paiement": "2017-06-30",
+      "date_ex_dividende": "2017-06-28",
+      "source": "brvm.org page 36"
+    },
+    {
+      "ticker": "CABC",
+      "societe": "SICABLE",
+      "exercice": 2016,
+      "montant_net_fcfa": 2000.0,
+      "date_paiement": "2017-06-30",
+      "date_ex_dividende": "2017-06-28",
+      "source": "brvm.org page 36"
+    },
+    {
+      "ticker": "SIBC",
+      "societe": "SIB",
+      "exercice": 2016,
+      "montant_net_fcfa": 855.0,
+      "date_paiement": "2017-06-09",
+      "date_ex_dividende": null,
+      "source": "brvm.org page 36"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL SENEGAL S.A.",
+      "exercice": 2016,
+      "montant_net_fcfa": 450.0,
+      "date_paiement": null,
+      "date_ex_dividende": null,
+      "source": "brvm.org page 36"
+    },
+    {
+      "ticker": "STBC",
+      "societe": "SITAB",
+      "exercice": 2016,
+      "montant_net_fcfa": 4124.0,
+      "date_paiement": "2017-06-19",
+      "date_ex_dividende": "2017-06-15",
+      "source": "brvm.org page 36"
+    },
+    {
+      "ticker": "SLBC",
+      "societe": "SOLIBRA",
+      "exercice": 2016,
+      "montant_net_fcfa": 4101.0,
+      "date_paiement": "2017-06-08",
+      "date_ex_dividende": "2017-06-06",
+      "source": "brvm.org page 36"
+    },
+    {
+      "ticker": "SIBC",
+      "societe": "SIB",
+      "exercice": 2016,
+      "montant_net_fcfa": 855.0,
+      "date_paiement": "2017-06-09",
+      "date_ex_dividende": "2017-06-07",
+      "source": "brvm.org page 36"
+    },
+    {
+      "ticker": "BOAN",
+      "societe": "BANK OF AFRICA NG",
+      "exercice": 2016,
+      "montant_net_fcfa": 4910.0,
+      "date_paiement": "2017-05-19",
+      "date_ex_dividende": "2017-05-16",
+      "source": "brvm.org page 37"
+    },
+    {
+      "ticker": "ECOC",
+      "societe": "ECOBANK TG",
+      "exercice": 2016,
+      "montant_net_fcfa": 1.208,
+      "date_paiement": "2017-04-28",
+      "date_ex_dividende": "2017-04-28",
+      "source": "brvm.org page 37"
+    },
+    {
+      "ticker": "BOABF",
+      "societe": "BANK OF AFRICA BF",
+      "exercice": 2016,
+      "montant_net_fcfa": 6930.0,
+      "date_paiement": "2017-05-04",
+      "date_ex_dividende": "2017-04-30",
+      "source": "brvm.org page 37"
+    },
+    {
+      "ticker": "BOAS",
+      "societe": "BANK OF AFRICA SN",
+      "exercice": 2016,
+      "montant_net_fcfa": 1000.0,
+      "date_paiement": "2017-05-15",
+      "date_ex_dividende": "2017-05-12",
+      "source": "brvm.org page 37"
+    },
+    {
+      "ticker": "BOAC",
+      "societe": "BANK OF AFRICA CI",
+      "exercice": 2016,
+      "montant_net_fcfa": 5480.0,
+      "date_paiement": "2017-05-08",
+      "date_ex_dividende": "2017-05-05",
+      "source": "brvm.org page 37"
+    },
+    {
+      "ticker": "BOAM",
+      "societe": "BANK OF AFRICA ML",
+      "exercice": 2016,
+      "montant_net_fcfa": 2790.0,
+      "date_paiement": "2017-05-02",
+      "date_ex_dividende": "2017-04-28",
+      "source": "brvm.org page 37"
+    },
+    {
+      "ticker": "FTSC",
+      "societe": "FILTISAC CI",
+      "exercice": 2016,
+      "montant_net_fcfa": null,
+      "date_paiement": "2016-12-22",
+      "date_ex_dividende": "2016-12-22",
+      "source": "brvm.org page 37"
+    },
+    {
+      "ticker": "CIEC",
+      "societe": "CIE CI",
+      "exercice": 2015,
+      "montant_net_fcfa": 2641.0,
+      "date_paiement": "2016-09-15",
+      "date_ex_dividende": "2016-09-13",
+      "source": "brvm.org page 38"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL",
+      "exercice": 2015,
+      "montant_net_fcfa": 450.0,
+      "date_paiement": "2016-08-02",
+      "date_ex_dividende": "2016-07-29",
+      "source": "brvm.org page 38"
+    },
+    {
+      "ticker": "BOAS",
+      "societe": "BANK OF AFRICA SN",
+      "exercice": 2015,
+      "montant_net_fcfa": 750.0,
+      "date_paiement": "2016-08-01",
+      "date_ex_dividende": "2016-07-28",
+      "source": "brvm.org page 38"
+    },
+    {
+      "ticker": "CFAC",
+      "societe": "CFAO MOTORS CI",
+      "exercice": 2015,
+      "montant_net_fcfa": 2297.7,
+      "date_paiement": "2016-07-29",
+      "date_ex_dividende": "2016-07-27",
+      "source": "brvm.org page 38"
+    },
+    {
+      "ticker": "CABC",
+      "societe": "SICABLE",
+      "exercice": 2015,
+      "montant_net_fcfa": 1200.0,
+      "date_paiement": "2016-07-28",
+      "date_ex_dividende": "2016-07-26",
+      "source": "brvm.org page 38"
+    },
+    {
+      "ticker": "SHEC",
+      "societe": "VIVO ENERGY CI",
+      "exercice": 2015,
+      "montant_net_fcfa": 1665.0,
+      "date_paiement": "2016-07-27",
+      "date_ex_dividende": "2016-07-25",
+      "source": "brvm.org page 38"
+    },
+    {
+      "ticker": "SOGC",
+      "societe": "SOGB",
+      "exercice": 2015,
+      "montant_net_fcfa": 1710.0,
+      "date_paiement": "2016-07-25",
+      "date_ex_dividende": "2016-07-21",
+      "source": "brvm.org page 38"
+    },
+    {
+      "ticker": "TTLC",
+      "societe": "TOTAL SENEGAL S.A.",
+      "exercice": 2015,
+      "montant_net_fcfa": 935.0,
+      "date_paiement": "2016-07-15",
+      "date_ex_dividende": "2016-07-13",
+      "source": "brvm.org page 38"
+    },
+    {
+      "ticker": "PRSC",
+      "societe": "TRACTAFRIC CI",
+      "exercice": 2015,
+      "montant_net_fcfa": 13050.0,
+      "date_paiement": "2016-07-05",
+      "date_ex_dividende": "2016-05-01",
+      "source": "brvm.org page 39"
+    },
+    {
+      "ticker": "FTSC",
+      "societe": "FILTISAC CI",
+      "exercice": 2015,
+      "montant_net_fcfa": 1045.0,
+      "date_paiement": "2016-06-30",
+      "date_ex_dividende": "2016-06-28",
+      "source": "brvm.org page 39"
+    },
+    {
+      "ticker": "SDSC",
+      "societe": "BOLLORE TRANSPORT & LOGISTICS",
+      "exercice": 2015,
+      "montant_net_fcfa": 9581.0,
+      "date_paiement": "2016-06-28",
+      "date_ex_dividende": "2016-06-24",
+      "source": "brvm.org page 39"
+    },
+    {
+      "ticker": "SGBC",
+      "societe": "SGB CI",
+      "exercice": 2015,
+      "montant_net_fcfa": 5228.0,
+      "date_paiement": "2016-06-28",
+      "date_ex_dividende": "2016-04-24",
+      "source": "brvm.org page 39"
+    },
+    {
+      "ticker": "SRVC",
+      "societe": "SERVAIR ABIDJAN CI",
+      "exercice": 2015,
+      "montant_net_fcfa": 1800.0,
+      "date_paiement": "2016-06-16",
+      "date_ex_dividende": "2016-06-14",
+      "source": "brvm.org page 39"
+    },
+    {
+      "ticker": "STBC",
+      "societe": "SITAB",
+      "exercice": 2015,
+      "montant_net_fcfa": 8150.0,
+      "date_paiement": "2016-06-09",
+      "date_ex_dividende": "2016-06-07",
+      "source": "brvm.org page 39"
+    }
+  ]
+}
