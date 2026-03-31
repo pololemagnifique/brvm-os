@@ -12,6 +12,7 @@ interface Technicals {
   mm10: number | null;
   mm20: number | null;
   mm50: number | null;
+  mm100: number | null;
   support30: number | null;
   resistance30: number | null;
   support252: number | null;
@@ -22,6 +23,10 @@ interface Technicals {
   vsMm10: number | null;
   vsMm20: number | null;
   vsMm50: number | null;
+  vsMm100: number | null;
+  macd_line: number | null;
+  macd_signal: number | null;
+  macd_histogram: number | null;
   nbJours: number;
 }
 
@@ -471,6 +476,13 @@ export default function StockTechnicals({ ticker }: Props) {
               vs: data.vsMm50,
               dim: insufficient,
             },
+            {
+              label: "MM100",
+              color: "#ec4899",
+              value: data.mm100,
+              vs: data.vsMm100,
+              dim: insufficient || data.nbJours < 100,
+            },
           ].map(({ label, color, value, vs, dim }) => (
             <div
               key={label}
@@ -577,6 +589,55 @@ export default function StockTechnicals({ ticker }: Props) {
             <VarBadge value={insufficient ? null : data.var30j} />
           </div>
         </div>
+      </div>
+
+      {/* MACD */}
+      <div>
+        <div
+          style={{
+            fontSize: "0.7rem",
+            fontWeight: 600,
+            color: "var(--muted)",
+            textTransform: "uppercase",
+            letterSpacing: "0.06em",
+            marginBottom: 10,
+          }}
+        >
+          MACD (12,26,9)
+        </div>
+        {data.macd_line !== null ? (
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            <div style={{ display: "flex", gap: 16 }}>
+              <div>
+                <div style={{ fontSize: "0.72rem", color: "var(--muted)", marginBottom: 2 }}>MACD</div>
+                <div style={{ fontFamily: "monospace", fontSize: "0.9rem", fontWeight: 600, color: "#3b82f6" }}>
+                  {data.macd_line !== null ? data.macd_line.toFixed(2) : "—"}
+                </div>
+              </div>
+              <div>
+                <div style={{ fontSize: "0.72rem", color: "var(--muted)", marginBottom: 2 }}>Signal</div>
+                <div style={{ fontFamily: "monospace", fontSize: "0.9rem", fontWeight: 600, color: "#f59e0b" }}>
+                  {data.macd_signal !== null ? data.macd_signal.toFixed(2) : "—"}
+                </div>
+              </div>
+              <div>
+                <div style={{ fontSize: "0.72rem", color: "var(--muted)", marginBottom: 2 }}>Histogramme</div>
+                <div style={{ fontFamily: "monospace", fontSize: "0.9rem", fontWeight: 600, color: data.macd_histogram !== null ? (data.macd_histogram >= 0 ? "#00ff88" : "#ff4444") : "var(--muted)" }}>
+                  {data.macd_histogram !== null ? (data.macd_histogram >= 0 ? "+" : "") + data.macd_histogram.toFixed(2) : "—"}
+                </div>
+              </div>
+            </div>
+            {data.macd_histogram !== null && (
+              <div style={{ fontSize: "0.72rem", color: data.macd_histogram >= 0 ? "#00ff88" : "#ff4444" }}>
+                Momentum {data.macd_histogram >= 0 ? "haussier ↑" : "baissier ↓"}
+              </div>
+            )}
+          </div>
+        ) : (
+          <div style={{ fontSize: "0.8rem", color: "var(--muted)" }}>
+            Données insuffisantes (min. 35 jours requis)
+          </div>
+        )}
       </div>
 
       {/* Back link */}

@@ -8,9 +8,15 @@ import {
   LineSeries,
   LineStyle,
   Time,
+  HistogramSeries,
 } from "lightweight-charts";
 
 interface CandlePoint {
+  time: number;
+  value: number;
+}
+
+interface MACDPoint {
   time: number;
   value: number;
 }
@@ -20,6 +26,9 @@ interface StockChartProps {
   history: CandlePoint[];
   mm20: CandlePoint[];
   mm50: CandlePoint[];
+  macd?: MACDPoint[];
+  macdSignal?: MACDPoint[];
+  macdHistogram?: MACDPoint[];
 }
 
 type Timeframe = "1W" | "1M" | "3M";
@@ -29,12 +38,20 @@ export default function StockChart({
   history,
   mm20,
   mm50,
+  macd,
+  macdSignal,
+  macdHistogram,
 }: StockChartProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const chartRef = useRef<IChartApi | null>(null);
   const seriesRef = useRef<ISeriesApi<"Line"> | null>(null);
   const mm20Ref = useRef<ISeriesApi<"Line"> | null>(null);
   const mm50Ref = useRef<ISeriesApi<"Line"> | null>(null);
+  const macdContainerRef = useRef<HTMLDivElement>(null);
+  const macdChartRef = useRef<IChartApi | null>(null);
+  const macdLineRef = useRef<ISeriesApi<"Line"> | null>(null);
+  const macdSignalRef = useRef<ISeriesApi<"Line"> | null>(null);
+  const macdHistRef = useRef<ISeriesApi<"Histogram"> | null>(null);
   const [tf, setTf] = useState<Timeframe>("1M");
 
   function filterByTf(data: CandlePoint[]): CandlePoint[] {
@@ -130,6 +147,81 @@ export default function StockChart({
     };
   }, []);
 
+  // MACD chart
+  useEffect(() => {
+    if (!macdContainerRef.current) return;
+
+    const mChart = createChart(macdContainerRef.current, {
+      layout: {
+        background: { color: "#0a0f0d" },
+        textColor: "#9ca3af",
+        fontFamily: "Inter, system-ui, sans-serif",
+      },
+      grid: {
+        vertLines: { color: "#1a2a22" },
+        horzLines: { color: "#1a2a22" },
+      },
+      crosshair: {
+        mode: 1,
+        vertLine: { color: "#00ff88", width: 1, style: LineStyle.Dashed },
+        horzLine: { color: "#00ff88", width: 1, style: LineStyle.Dashed },
+      },
+      rightPriceScale: { borderColor: "#2d3d32", textColor: "#9ca3af" },
+      timeScale: {
+        borderColor: "#2d3d32",
+        timeVisible: false,
+        tickMarkFormatter: (time: number) => {
+          const d = new Date(time * 1000);
+          return d.toLocaleDateString("fr-FR", { day: "2-digit", month: "short" });
+        },
+      },
+      handleScroll: true,
+      handleScale: true,
+    });
+
+    const histSeries = mChart.addSeries(HistogramSeries, {
+      color: "#00ff88",
+      priceFormat: { type: "custom", formatter: (v: number) => v.toFixed(2) },
+      priceScaleId: "right",
+    });
+    mChart.priceScale("right").applyOptions({
+      scaleMargins: { top: 0.1, bottom: 0.1 },
+    });
+
+    const lineSeries = mChart.addSeries(LineSeries, {
+      color: "#3b82f6",
+      lineWidth: 1,
+      priceLineVisible: false,
+    });
+
+    const sigSeries = mChart.addSeries(LineSeries, {
+      color: "#f59e0b",
+      lineWidth: 1,
+      priceLineVisible: false,
+    });
+
+    macdChartRef.current = mChart;
+    macdHistRef.current = histSeries;
+    macdLineRef.current = lineSeries;
+    macdSignalRef.current = sigSeries;
+
+    const ro = new ResizeObserver(() => {
+      if (macdContainerRef.current) {
+        mChart.applyOptions({
+          width: macdContainerRef.current.clientWidth,
+          height: 100,
+        });
+      }
+    });
+    ro.observe(macdContainerRef.current);
+
+    return () => {
+      ro.disconnect();
+      mChart.remove();
+      macdChartRef.current = null;
+    };
+  }, []);
+
   // Update data when tf changes
   useEffect(() => {
     if (!seriesRef.current || !mm20Ref.current || !mm50Ref.current) return;
@@ -140,7 +232,22 @@ export default function StockChart({
     mm20Ref.current.setData(mm20f as any);
     mm50Ref.current.setData(mm50f as any);
     chartRef.current?.timeScale().fitContent();
-  }, [tf, history, mm20, mm50]);
+
+    // MACD data
+    if (macdHistRef.current && macdLineRef.current && macdSignalRef.current) {
+      const mFiltered = filterByTf(macd || []);
+      const sFiltered = filterByTf(macdSignal || []);
+      const hFiltered = filterByTf(macdHistogram || []);
+      macdLineRef.current.setData(mFiltered as any);
+      macdSignalRef.current.setData(sFiltered as any);
+      macdHistRef.current.setData(hFiltered.map((d) => ({
+        time: d.time,
+        value: d.value,
+        color: d.value >= 0 ? "rgba(0,255,136,0.6)" : "rgba(255,68,68,0.6)",
+      })) as any);
+      macdChartRef.current?.timeScale().fitContent();
+    }
+  }, [tf, history, mm20, mm50, macd, macdSignal, macdHistogram]);
 
   const tfBtns: Timeframe[] = ["1W", "1M", "3M"];
 
@@ -175,6 +282,30 @@ export default function StockChart({
         ref={containerRef}
         style={{ width: "100%", height: 340, borderRadius: 8, overflow: "hidden" }}
       />
+
+      {/* MACD panel */}
+      {macd && macd.length > 0 && (
+        <div style={{ marginTop: 12 }}>
+          <div
+            ref={macdContainerRef}
+            style={{ width: "100%", height: 100, borderRadius: 8, overflow: "hidden" }}
+          />
+          <div className="flex gap-5 mt-2">
+            <span style={{ fontSize: "0.75rem", color: "#9ca3af", display: "flex", alignItems: "center", gap: 4 }}>
+              <span style={{ display: "inline-block", width: 20, height: 2, background: "#3b82f6", borderRadius: 1 }} />
+              MACD
+            </span>
+            <span style={{ fontSize: "0.75rem", color: "#9ca3af", display: "flex", alignItems: "center", gap: 4 }}>
+              <span style={{ display: "inline-block", width: 20, height: 2, background: "#f59e0b", borderRadius: 1 }} />
+              Signal
+            </span>
+            <span style={{ fontSize: "0.75rem", color: "#9ca3af", display: "flex", alignItems: "center", gap: 4 }}>
+              <span style={{ display: "inline-block", width: 8, height: 8, background: "#00ff88", borderRadius: 1 }} />
+              Histogramme ↑
+            </span>
+          </div>
+        </div>
+      )}
 
       {/* Legend */}
       <div className="flex gap-5 mt-2">

@@ -123,12 +123,52 @@ export class StocksService {
     const rs = avgLoss === 0 ? 100 : avgGain / avgLoss;
     const rsi14 = avgLoss === 0 ? 100 : Math.round((100 - 100 / (1 + rs)) * 10) / 10;
 
-    // MM20 / MM50 / MM10
+    // MM20 / MM50 / MM100 / MM10
     const mm = (arr: number[], n: number) => arr.length >= n
       ? Math.round((arr.slice(-n).reduce((a, b) => a + b, 0) / n) * 100) / 100 : null;
     const mm10 = mm(closes, 10);
     const mm20 = mm(closes, 20);
     const mm50 = mm(closes, 50);
+    const mm100 = mm(closes, 100);
+
+    // EMA helper
+    const ema = (arr: number[], period: number): number | null => {
+      if (arr.length < period) return null;
+      const k = 2 / (period + 1);
+      // Seed with SMA of first `period` values
+      let emaVal = arr.slice(0, period).reduce((a, b) => a + b, 0) / period;
+      for (let i = period; i < arr.length; i++) {
+        emaVal = arr[i] * k + emaVal * (1 - k);
+      }
+      return Math.round(emaVal * 100) / 100;
+    };
+
+    const ema12 = ema(closes, 12);
+    const ema26 = ema(closes, 26);
+
+    // MACD: EMA12 - EMA26, Signal = EMA9 of MACD line, Histogram = MACD - Signal
+    let macdLine: number | null = null;
+    let macdSignal: number | null = null;
+    let macdHistogram: number | null = null;
+    if (ema12 !== null && ema26 !== null) {
+      macdLine = Math.round((ema12 - ema26) * 100) / 100;
+      // Build MACD series
+      const macdSeries: number[] = [];
+      for (let i = 26; i < closes.length; i++) {
+        const e12 = ema(closes.slice(0, i + 1), 12);
+        const e26 = ema(closes.slice(0, i + 1), 26);
+        if (e12 !== null && e26 !== null) {
+          macdSeries.push(Math.round((e12 - e26) * 100) / 100);
+        }
+      }
+      if (macdSeries.length >= 9) {
+        const signalEma = ema(macdSeries, 9);
+        macdSignal = signalEma;
+        if (macdLine !== null && macdSignal !== null) {
+          macdHistogram = Math.round((macdLine - macdSignal) * 100) / 100;
+        }
+      }
+    }
 
     // Support / Résistance sur 30j et max
     const last30 = closes.slice(-30);
@@ -164,6 +204,7 @@ export class StocksService {
       mm10,
       mm20,
       mm50,
+      mm100,
       support30,
       resistance30,
       support252,
@@ -174,6 +215,10 @@ export class StocksService {
       vsMm10: vsMm(mm10),
       vsMm20: vsMm(mm20),
       vsMm50: vsMm(mm50),
+      vsMm100: vsMm(mm100),
+      macd_line: macdLine,
+      macd_signal: macdSignal,
+      macd_histogram: macdHistogram,
       nbJours: closes.length,
     };
   }
